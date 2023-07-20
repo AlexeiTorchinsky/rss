@@ -48,8 +48,15 @@ module.exports = {
           'sass-loader',]
       },
       {
-        test: /\.(jpe?g|png|webp|gif|svg)$/i,
+        test: /\.(jpe?g|png|webp|gif)$/i,
         type: 'asset/resource'
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        generator: {
+        filename: path.join('icons', '[name].[contenthash][ext]'),
+        },
       },
     ],
   }
