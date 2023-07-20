@@ -16,7 +16,8 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
-    hot: true,
+    // hot: true,
+    watchFiles: path.join(__dirname, 'src')
   },
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
@@ -42,7 +43,8 @@ module.exports = {
       },
       {
         test: /\.(c|sa|sc)ss$/i,
-        use:[  MiniCssExtractPlugin.loader,
+        use:[
+           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',]

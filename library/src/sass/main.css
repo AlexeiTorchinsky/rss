@@ -1,0 +1,26 @@
+@import '../normalize.css';
+body {
+  background-color: antiquewhite;
+}
+
+.header,
+.main,
+.footer {
+  width: 1440px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #0C0C0E;
+}
+
+.header__logo {
+  color: #FFFFFF;
+}
+
+.nav__items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=main.css.map */
