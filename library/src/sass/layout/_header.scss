@@ -37,9 +37,17 @@ ul.nav__items li:not(:last-child) {
 ul.nav__items li:last-child {
   margin-right: 42px;
 }
-.nav__item {
+.nav__item-link {
+  display: inline-block;
+  text-decoration: none;
   color: $color-white;
   font-family: Inter;
   font-size: 20px;
   line-height: 50px; /* 250% */
+  transition: all 0.2s ease 0s;
+  &:hover {
+    color: $color-grey;
+    transform: translateY(1px);
+
+  }
 }
