@@ -1,0 +1,47 @@
+.about {
+  padding: 20px 20px 40px 20px;
+}
+
+.about__text {
+  color: $color-black;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+}
+
+.about__headers-underline {
+  margin-bottom: 39px;
+}
+.about__slider {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.slider__pagination {
+  width: 78px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.pagination__button-container {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.pagination__button_brown {
+  background-color: $color-brown;
+}
+.pagination__button_black {
+  background-color: $color-black;
+}
+.pagination__button_dark {
+  background-color: $color-dark;
+}
