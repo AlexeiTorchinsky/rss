@@ -4,3 +4,9 @@
   flex-shrink: 0;
   background-color: $color-dark;
 }
+
+.card__headers-underline {
+  width: 60px;
+  height: 1px;
+  background-color: $color-brown;
+}

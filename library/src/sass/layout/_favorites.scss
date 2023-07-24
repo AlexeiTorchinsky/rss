@@ -1,0 +1,27 @@
+.favorites {
+    padding: 15px 0 0 0;
+}
+.favorites__form-for-book-card {
+    padding-left: 20px;
+}
+.favorites__text {
+    color: $color-black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.label-for-radio {
+    color: $color-black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.label-for-radio_checked {
+    font-weight: 700;
+}
