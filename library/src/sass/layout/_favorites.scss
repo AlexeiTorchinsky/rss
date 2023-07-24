@@ -1,27 +1,43 @@
 .favorites {
-    padding: 15px 0 0 0;
+  padding: 15px 0 0 0;
 }
-.favorites__form-for-book-card {
-    padding-left: 20px;
+.favorites__content-container {
+  padding-left: 20px;
 }
 .favorites__text {
-    color: $color-black;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  color: $color-black;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .label-for-radio {
-    color: $color-black;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: $color-black;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .label-for-radio_checked {
-    font-weight: 700;
+  font-weight: 700;
+}
+
+.radio-button {
+  accent-color: $color-black;
+  height: 17px;
+  width: 17px;
+  transform:scale(1.0);
+  // margin-right: 15px;
+}
+// .label-for-radio {
+//   margin-right: 90px;
+// }
+.rad {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
 }
