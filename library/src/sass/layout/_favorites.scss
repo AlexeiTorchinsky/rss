@@ -3,8 +3,13 @@
 }
 .favorites__content-container {
   padding-left: 20px;
+  padding-right: 60px;
 }
 
+.favorites__book-cards {
+  display: flex;
+  justify-content: space-between;
+}
 .favorites__form-for-book-card {
   margin-bottom: 40px;
 }
@@ -48,6 +53,9 @@
 }
 
 .book-cards__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 550px;
   height: 556px;
   border: 1px solid $color-black;
