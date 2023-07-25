@@ -19,8 +19,8 @@
       <nav class="header__nav">
         <ul class="nav__items">
           <li class="nav__item"><a class="nav__item-link" href="#about">About</a></li>
-          <li class="nav__item"><a class="nav__item-link" href="#favorites">Favorites</a</li>
-          <li class="nav__item"><a class="nav__item-link" href="#coffee shop">Coffee shop</a></li>
+          <li class="nav__item"><a class="nav__item-link" href="#favorites">Favorites</a></li>
+          <li class="nav__item"><a class="nav__item-link" href="#coffee-shop">Coffee shop</a></li>
           <li class="nav__item"><a class="nav__item-link" href="#contacts">Contacts</a></li>
           <li class="nav__item"><a class="nav__item-link" href="#library">Library Card</a></li>
         </ul>
@@ -32,7 +32,7 @@
     <section class="welcome">
       <div class="welcome__text">
         <h2>
-        Welcome&nbsp<br>to the Brooklyn<br>Library
+        Welcome&nbsp;<br>to the Brooklyn<br>Library
       </h2>
       </div>
     </section>
@@ -66,24 +66,24 @@
       <div class="favorites__content-container">
         <form class="favorites__form-for-book-card">
           <p class="favorites__text">Pick favorites of season</p>
-          <input class="radio-button" type="radio" id="favorites1" name="favorites" checked>
-          <label class="label-for-radio label-for-radio_checked" for="favorites1">Winter</label>
-          <input class="radio-button" type="radio" id="favorites2" name="favorites">
-          <label class="label-for-radio" for="favorites2">Spring</label>
-          <input class="radio-button" type="radio" id="favorites3" name="favorites">
-          <label class="label-for-radio" for="favorites3">Summer</label>
-          <input class="radio-button" type="radio" id="favorites4" name="favorites">
-          <label class="label-for-radio" for="favorites4">Autumn</label>
+          <input class="radio-button" type="radio" id="season1" name="seasons" checked>
+          <label class="label-for-radio label-for-radio_checked" for="season1">Winter</label>
+          <input class="radio-button" type="radio" id="season2" name="seasons">
+          <label class="label-for-radio" for="season2">Spring</label>
+          <input class="radio-button" type="radio" id="season3" name="seasons">
+          <label class="label-for-radio label-for-radio_summer " for="season3">Summer</label>
+          <input class="radio-button" type="radio" id="season4" name="seasons">
+          <label class="label-for-radio" for="season4">Autumn</label>
         </form>
         <div class="favorites__book-cards">
           <div class="book-cards__card">
             <h3 class="card__h3 h3">
               Staff Picks
-            </h>
+            </h3>
             <hr class="headers-underline card__headers-underline">
-            <h4 class="card__h4">
-              The Book Eaters<br>
-              By Sunyi Dean
+            <h4 class="card__h4 h4">
+              <span class="card__h4__span card__h4__span1">The Book Eaters</span><br>
+              <span class="card__h4__span card__h4__span2">By Sunyi Dean</span>
             </h4>
             <p class="card__text">
               An unusual sci-fi story about a book eater woman
@@ -93,7 +93,7 @@
               and a strong, complex protagonist. Not for the faint of heart.
             </p>
             <button class="button card__button-buy">Buy</button>
-            <img src="img/book-card1.png" alt="book cover">
+            <img class="book-card__img" src="img/book-card1.png" alt="book cover">
           </div>
         </div>
       </div>

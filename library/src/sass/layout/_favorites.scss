@@ -1,9 +1,14 @@
 .favorites {
-  padding: 15px 0 0 0;
+  padding: 16px 0 0 0;
 }
 .favorites__content-container {
   padding-left: 20px;
 }
+
+.favorites__form-for-book-card {
+  margin-bottom: 40px;
+}
+
 .favorites__text {
   color: $color-black;
   font-family: Inter;
@@ -11,6 +16,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 40px;
 }
 
 .label-for-radio {
@@ -30,14 +36,66 @@
   accent-color: $color-black;
   height: 17px;
   width: 17px;
-  transform:scale(1.0);
-  // margin-right: 15px;
+    // transform:scale(1.0);
+  margin-right: 15px;
 }
-// .label-for-radio {
-//   margin-right: 90px;
-// }
-.rad {
-  width: 700px;
-  display: flex;
-  justify-content: space-between;
+
+.label-for-radio {
+  margin-right: 90px;
+}
+.label-for-radio_summer {
+  margin-right: 85px;
+}
+
+.book-cards__card {
+  width: 550px;
+  height: 556px;
+  border: 1px solid $color-black;
+  padding: 14px 0 0 19px;
+  position: relative;
+}
+.card__headers-underline {
+  margin: 0;
+}
+
+.card__h4 {
+  margin: 19px 0 20px 0;
+}
+.card__h4__span1 {
+  color: $color-black;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 266.667% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card__h4__span2 {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.card__text {
+  color: $color-black;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 40px; /* 266.667% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  width: 355px;
+}
+
+.book-card__img {
+  position: absolute;
+  bottom: 0;
+  right: -41px;
+  z-index: 5;
 }

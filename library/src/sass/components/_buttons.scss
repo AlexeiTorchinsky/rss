@@ -3,3 +3,19 @@
   height: 16px;
   border-radius: 50%;
 }
+
+.button {
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid $color-dark;
+  background-color: $color-white;
+  color: $color-dark;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px; 
+}
