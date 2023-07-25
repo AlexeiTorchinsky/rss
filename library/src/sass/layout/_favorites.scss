@@ -53,9 +53,9 @@
 }
 
 .book-cards__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
   width: 550px;
   height: 556px;
   border: 1px solid $color-black;
@@ -99,6 +99,7 @@
   letter-spacing: 2px;
   text-transform: capitalize;
   width: 355px;
+  min-height: 320px;
 }
 
 .book-card__img {
