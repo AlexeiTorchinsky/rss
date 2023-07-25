@@ -18,4 +18,21 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px; 
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-brown;
+    border: none;
+  }
+}
+
+.button_brown {
+  color: $color-brown;;
+  border: 1px solid $color-brown;
+
+  &:hover {
+    cursor: default;
+    background-color: $color-white;
+    border: 1px solid $color-brown;
+  }
 }

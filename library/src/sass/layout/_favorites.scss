@@ -9,9 +9,10 @@
 .favorites__book-cards {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .favorites__form-for-book-card {
-  margin-bottom: 40px;
+  margin-bottom: 39px;
 }
 
 .favorites__text {
@@ -57,10 +58,11 @@
   // flex-direction: column;
   // justify-content: space-between;
   width: 550px;
-  height: 556px;
+  height: 555px;
   border: 1px solid $color-black;
   padding: 14px 0 0 19px;
   position: relative;
+  margin-bottom: 40px;
 }
 .card__headers-underline {
   margin: 0;
@@ -104,7 +106,8 @@
 
 .book-card__img {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: -41px;
   z-index: 5;
+  display: block;
 }
