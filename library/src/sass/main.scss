@@ -4,13 +4,15 @@
 
 @import './base/base';
 
+
+
+@import './components/h2-h3-h4-headers';
+@import './components/hr-underlines';
+@import './components/buttons';
+
 @import './layout/sections-common-rules';
 @import './layout/header';
 @import './layout/welcome';
 @import './layout/about';
 @import './layout/favorites';
 @import './layout/coffee-shop';
-
-@import './components/h2-h3-h4-headers';
-@import './components/hr-underlines';
-@import './components/buttons';
