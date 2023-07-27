@@ -51,13 +51,13 @@
   justify-content: space-between;
   gap: 40px;
 }
-.drinks-menu-item {
+.menu-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.drinks-menu-item__item-name,
-.drinks-menu-item__item-price {
+.menu-item__item-name,
+.menu-item__item-price {
   display: inline-block;
   color: $color-black;
   font-family: Inter;
@@ -66,12 +66,12 @@
   letter-spacing: 2px;
   text-transform: capitalize;
 }
-.drinks-menu-item__item-name {
+.menu-item__item-name {
   width: 199px;
 }
-.drinks-menu-item__item-price {
+.menu-item__item-price {
   font-family: Forum;
 }
-.drinks-menu-item__item-line {
+.menu-item__item-line {
   width: 100px;
 }
