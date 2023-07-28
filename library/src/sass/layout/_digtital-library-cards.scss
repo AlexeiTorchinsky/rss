@@ -13,7 +13,8 @@
   font-size: 30px;
   line-height: normal;
   letter-spacing: 0.6px;
-  margin: 0;
+  margin: 0 0 30px 0;
+  text-align: center;
 }
 
 .digital-library-cards-input-forms_forms-and-button {
@@ -22,7 +23,7 @@
   border: 3px solid $color-brown;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 20px 20px 94px 20px;
+  padding: 18px 20px 94px 18px;
   
 }
 
@@ -34,6 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .digital-library-cards__inputs-header {
@@ -51,7 +53,8 @@
   border-radius: 10px;
   background: $color-white;
   border: none;
-  padding: 8px 0 8px 20px;
+  padding: 11px 0 8px 19px;
+
   &::placeholder {
     color: $color-grey;
     font-family: Forum;
@@ -59,4 +62,54 @@
     line-height: 50px; /* 166.667% */
     letter-spacing: 0.6px;
   }
+}
+
+.digital-library-cards__input_first {
+  margin-bottom: 5px;
+}
+
+.input-button{
+  display: block;
+  margin: 0 auto;
+  width: 242px;
+  height: 44px;
+  color: $color-dark;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.get-card__header {
+  color: $color-black;
+  text-align: end;
+  margin: 0 0 35px 0;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+
+.get-card__text {
+  width: 456px;
+  color: $color-black;
+  text-align: right;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 0.4px;
+}
+
+.digital-library-cards__buttons{
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding-top: 15px;
+}
+.digital-library-cards__button {
+  display: block;
 }
