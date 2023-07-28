@@ -1,0 +1,62 @@
+.digital-library-cards {
+    padding: 20px 20px 0 20px;
+}
+
+.digital-library-cards__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.digital-library-cards-input-forms__header {
+  color: $color-black;
+  font-family: Inter;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+
+.digital-library-cards-input-forms_forms-and-button {
+  width: 600px;
+  height: 386px;
+  border: 3px solid $color-brown;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px 20px 94px 20px;
+  
+}
+
+.digital-library-cards-input-forms_inputs {
+  width: 560px;
+  height: 272px;
+  background-color: $color-brown;
+  padding: 20px 20px 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.digital-library-cards__inputs-header {
+  color: $color-black;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: 0.6px;
+  margin: 0;
+}
+
+.digital-library-cards__input {
+  width: 520px;
+  height: 66px;
+  border-radius: 10px;
+  background: $color-white;
+  border: none;
+  padding: 8px 0 8px 20px;
+  &::placeholder {
+    color: $color-grey;
+    font-family: Forum;
+    font-size: 30px;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+  }
+}
