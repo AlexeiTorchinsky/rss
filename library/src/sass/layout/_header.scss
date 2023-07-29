@@ -44,7 +44,7 @@ ul.nav__items li:last-child {
   font-family: Inter;
   font-size: 20px;
   line-height: 50px; /* 250% */
-  transition: all 0.2s ease 0s;
+  transition: all 0.3s ease 0s;
   &:hover {
     color: $color-grey;
     transform: translateY(1px);
