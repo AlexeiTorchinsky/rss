@@ -5,6 +5,10 @@
 .digital-library-cards__content {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 1095px) {
+    flex-direction: column;
+  }
 }
 
 .digital-library-cards-input-forms__header {
@@ -24,7 +28,9 @@
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 18px 20px 94px 18px;
-  
+  @media screen and (max-width: 1095px) {
+    margin: 0 auto 30px;
+  }
 }
 
 .digital-library-cards-input-forms_inputs {
@@ -90,6 +96,10 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.6px;
+
+  @media screen and (max-width: 1095px) {
+    text-align: center;
+  }
 }
 
 .get-card__text {
@@ -102,6 +112,11 @@
   font-weight: 400;
   line-height: 40px; /* 200% */
   letter-spacing: 0.4px;
+
+  @media screen and (max-width: 1095px) {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .digital-library-cards__buttons{
@@ -109,6 +124,10 @@
   justify-content: end;
   gap: 20px;
   padding-top: 15px;
+
+  @media screen and (max-width: 1095px) {
+    justify-content: center;
+  }
 }
 .digital-library-cards__button {
   display: block;
