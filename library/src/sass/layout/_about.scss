@@ -7,7 +7,13 @@
       display: none;
     }
   }
+   
+  @media screen and (max-width: 768px) {
 
+    .slider__img_second {
+      display: none;
+    }
+  }
 }
 
 .about__text {

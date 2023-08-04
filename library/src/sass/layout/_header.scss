@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: relative;
 }
 
 .header__logo {
@@ -22,6 +23,12 @@
   display: flex;
   align-items: center;
 }
+.header__nav {
+  @media screen and (max-width: 1025px) {
+    display: none;
+  }
+}
+
 .nav__items {
   list-style-type: none;
   display: flex;
@@ -49,5 +56,11 @@ ul.nav__items li:last-child {
     color: $color-grey;
     transform: translateY(1px);
 
+  }
+}
+
+.header__profile-icon {
+  @media screen and (max-width: 768px) {
+    padding-right: 85px;;
   }
 }
