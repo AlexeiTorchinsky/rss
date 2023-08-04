@@ -9,6 +9,7 @@
   }
    
   @media screen and (max-width: 768px) {
+    position: relative;
 
     .slider__img_second {
       display: none;
@@ -29,10 +30,46 @@
 .about__headers-underline {
   margin-bottom: 40px;
 }
+
+.about__arrows-btns {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 614px;
+    top: 509px;
+    left: 76px;
+
+  }
+}
+
+.arrows-btns {
+  width: 24px;
+  height: 24px;
+}
+
+.arrows-btn_left {
+  background-image: url("../../src/svg/Carret_Left.svg");
+}
+
+.arrows-btn_right {
+  background-image: url("../../src/svg/Carret_Right.svg");
+}
+
 .about__slider {
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 .slider__pagination {
   width: 78px;
