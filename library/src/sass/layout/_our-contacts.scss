@@ -4,6 +4,15 @@
 .our-contacts-content {
   display: flex;
   justify-content: space-between;
+  @media screen  and (max-width: 768px){
+    flex-direction: column;
+  }
+}
+
+.our-contacts__contacts {
+  @media screen and (max-width: 768px){
+    margin-bottom: 78px;
+  }
 }
 
 .our-contacts__text_bold,
@@ -35,9 +44,13 @@
   background-image: url('../../src/img/map.png');
   width: 696px;
   height: 414px;
+  @media screen and (max-width: 768px){
+    margin: 0 auto;
+  }
 }
 
 .contacts__library-tel-numbers,
 .contacts__tel-number_puttreham {
   margin: 0 0 40px 0;
 }
+
