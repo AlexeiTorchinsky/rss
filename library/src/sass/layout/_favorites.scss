@@ -1,5 +1,5 @@
 .favorites {
-  padding: 16px 0 0 0;
+  padding: 15px 0 0 0;
 }
 .favorites__content-container {
   padding-left: 20px;
@@ -37,6 +37,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
 }
 
 .label-for-radio_checked {
@@ -53,14 +54,22 @@
 
 .label-for-radio {
   margin-right: 90px;
+  @media screen and (max-width: 767px) {
+    margin-right: 40px;
+  }
 }
 .label-for-radio_summer {
   margin-right: 85px;
+  @media screen and (max-width: 767px) {
+    margin-right: 40px;
+  }
 }
 
 .label-for-radio__season4 {
   margin-right: 0;
 }
+
+
 .book-cards__card {
   // display: flex;
   // flex-direction: column;

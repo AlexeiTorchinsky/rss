@@ -2,11 +2,6 @@ import './index.html';
 import './sass/main.scss';
 
 
-
-
-removeHiddenPaginationButton();
-
-
 // console.log(`
 // Вёрстка валидная +10
     
