@@ -64,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
-
+ 
   @media screen and (max-width: 920px) {
     margin-bottom: 20px;
     img {
@@ -79,6 +79,9 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  @media screen and (max-width: 920px) {
+    width: 130px;
+  }
 }
 .pagination__button-container {
   width: 26px;
@@ -90,6 +93,16 @@
     cursor: pointer;
   }
 }
+
+.pagination__button-container_hidden {
+  display: none;
+  @media screen and (max-width: 920px) {
+    display: flex;
+  }
+    
+  
+}
+
 .pagination__button_brown {
   background-color: $color-brown;
 }
@@ -98,4 +111,13 @@
 }
 .pagination__button_dark {
   background-color: $color-dark;
+}
+
+@media screen and (max-width: 920px ) {
+  .pagination__button {
+    background-color: $color-dark;
+  }
+  .pagination__button_first {
+    background-color: $color-brown;
+  }
 }
