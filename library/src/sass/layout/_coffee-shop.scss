@@ -34,6 +34,13 @@
     margin: 0;
     // padding-right: 15px;
   }
+  @media screen and (max-width: 1440px) {
+    .coffe-shop__text_first,
+    .coffe-shop__text_second,
+    .coffe-shop__text_third {
+      text-align: center;
+    }
+  }
 }
 
 .coffee-shop__h2 {
