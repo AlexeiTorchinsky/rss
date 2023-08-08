@@ -1,7 +1,9 @@
 import './index.html';
 import './sass/main.scss';
 
+import { burger } from './modules/burger';
 
+burger();
 // console.log(`
 // Вёрстка валидная +10
     

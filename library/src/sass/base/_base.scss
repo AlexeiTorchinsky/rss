@@ -6,10 +6,28 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
-// body {
+body {
+  position: relative;
+}
+body._locked{
+  overflow: hidden;
+}
 
-// }
-
+.body__cover {
+  display: none;
+  
+}
+.body__cover._active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  //background-color: rgba(41, 41, 41, 0.6);
+  z-index: 1;
+  
+}
 // font-family: 'Forum', cursive;
 // font-family: 'Inter', sans-serif;
 .wrapper {

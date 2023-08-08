@@ -14,9 +14,7 @@
   }
 
 }
-.header__burger-menu-icon._active {
-  transform: rotate(90deg);
-}
+
 .burger-menu-icon__span,
 .header__burger-menu-icon::before,
 .header__burger-menu-icon::after {
@@ -39,4 +37,22 @@
   }
 .burger-menu-icon__span {
     top: 46%;
+  }
+
+  .header__burger-menu-icon._active {
+    top: 35px;
+    right: 14px
+  }
+  .header__burger-menu-icon._active span {
+    transform: scale(0);
+  }
+
+  .header__burger-menu-icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) ;
+  }
+
+  .header__burger-menu-icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) ;
   }

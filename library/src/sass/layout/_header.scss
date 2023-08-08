@@ -22,11 +22,17 @@
 .header-nav-and-profile-icon {
   display: flex;
   align-items: center;
+  position: relative;
 }
-.header__nav {
-  @media screen and (max-width: 1025px) {
-    display: none;
-  }
+// .header__nav {
+//   @media screen and (max-width: 1025px) {
+//     display: none;
+//   }
+// }
+
+.header__nav._active {
+  // display: flex;
+  position: relative;
 }
 
 .nav__items {
@@ -35,6 +41,42 @@
   // flex-direction: row;
   padding-left: 0;
   margin: 0;
+  @media screen and (max-width: 1025px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transform: translateX(0);
+    width: 332px;
+    height: 570px;
+    background-color: $color-black;
+    right: 0;
+    top: 0;
+    padding-top: 100px;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    z-index: 5;
+  }  
+}
+
+.nav__items._active {
+  // display: flex;
+  // flex-direction: column;
+  // position: fixed;
+  // transform: translateX(0);
+  // width: 332px;
+  // height: 570px;
+  // background-color: $color-black;
+  // right: 0;
+  // top: 0;
+  // padding-top: 100px;
+  // align-items: center;
+  transform: translateX(0);
+  .nav__item {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
 }
 
 ul.nav__items li:not(:last-child) {
@@ -60,7 +102,15 @@ ul.nav__items li:last-child {
 }
 
 .header__profile-icon {
+  transition: all 0.3s ease 0s;
   @media screen and (max-width: 1025px) {
-    padding-right: 85px;;
+    padding-right: 85px;
   }
+}
+
+.header__profile-icon._active {
+  position: fixed;
+  padding-right: 0;
+  right: 91px;
+  z-index: 15;
 }
