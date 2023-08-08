@@ -8,6 +8,7 @@ const navItems = document.querySelectorAll('.nav__item');
 
 
 export function burger() {
+  
   const toggleClassName = () => {
     burgerIcon.classList.toggle('_active');
     headerNavMenu.classList.toggle('_active');
