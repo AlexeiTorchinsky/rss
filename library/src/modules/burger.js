@@ -33,7 +33,7 @@ export function burger() {
   
   });
 
-  if (window.screen.width > 1025) {
-    toggleClassName();
-  }
+  // if (window.screen.width > 1025) {
+  //   toggleClassName();
+  // }
 }
