@@ -37,12 +37,17 @@
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 614px;
+    width: calc(100vw - 154px);
     // top: 288px;
     // left: 55px;
     top: 51.4%;
     left: 7.8%;
 
+  }
+
+  @media screen and (max-width: 700px) {
+    width: calc(100vw - 130px);
+    left: 7%;
   }
 }
 
@@ -64,7 +69,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
- 
+
   @media screen and (max-width: 920px) {
     margin-bottom: 20px;
     img {
