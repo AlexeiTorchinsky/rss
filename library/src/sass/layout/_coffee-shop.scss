@@ -22,17 +22,32 @@
   .coffe-shop__text_first {
     margin: 0;
     padding-left: 18px;
+
   }
 
   .coffe-shop__text_second{
     margin: 0;
     padding-left: 21px;
   }
-
+  
+  @media screen and (max-width: 768px){
+    .coffe-shop__text_first,
+    .coffe-shop__text_second {
+      padding-left: 0;
+    };
+   
+  }
   .coffe-shop__text_third  {
     text-align: center;
     margin: 0;
     // padding-right: 15px;
+  }
+  @media screen and (max-width: 1440px) {
+    .coffe-shop__text_first,
+    .coffe-shop__text_second,
+    .coffe-shop__text_third {
+      text-align: center;
+    }
   }
 }
 
@@ -45,6 +60,9 @@
 .menu-container {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 920px) {
+    flex-direction: column;
+  }
 }
 
 .coffee-shop__menu {
@@ -53,6 +71,8 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+  @media screen and (max-width: 920px) {
+    margin-bottom: 40px;  }
 }
 
 .menu-item {
@@ -94,6 +114,10 @@
 
 .coffee-shop__menu_dessert {
   width: 482px;
+  @media screen and (max-width: 920px) {
+    align-self: self-end;
+    margin-bottom: 0;
+  }
 }
 
 .menu-item__desert {

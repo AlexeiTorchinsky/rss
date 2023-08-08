@@ -1,6 +1,9 @@
 .welcome {
   background: url('../../src/img/Welcome.png')lightgray 50% / cover no-repeat;
   padding: 220px 0 160px 0;
+  @media screen and (max-width: 768px) {
+    background: url('../../src/img/Welcome768.png')lightgray 50% / cover no-repeat;
+  }
 }
 .welcome__text {
 
