@@ -102,9 +102,13 @@ ul.nav__items li:last-child {
 }
 
 .header__profile-icon {
-  transition: all 0.3s ease 0s;
+ 
   @media screen and (max-width: 1025px) {
-    padding-right: 85px;
+
+    position: absolute;
+    padding-right: 0;
+    right: 85px;
+    z-index: 15;
   }
 }
 
