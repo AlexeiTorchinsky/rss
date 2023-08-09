@@ -2,7 +2,6 @@ const body = document.body;
 const burgerIcon = document.querySelector('.header__burger-menu-icon');
 const headerNavMenu = document.querySelector('.header__nav');
 const bodyCover = document.querySelector('.body__cover');
-const profileIcon = document.querySelector('.header__profile-icon');
 const headerNavList = document.querySelector('.nav__items');
 const navItems = document.querySelectorAll('.nav__item');
 
@@ -14,7 +13,6 @@ export function burger() {
     headerNavMenu.classList.toggle('_active');
     headerNavList.classList.toggle('_active');
     body.classList.toggle('_locked');
-    profileIcon.classList.toggle('_active');
     bodyCover.classList.toggle('_active');
   }
   
