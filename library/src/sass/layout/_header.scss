@@ -60,17 +60,7 @@
 }
 
 .nav__items._active {
-  // display: flex;
-  // flex-direction: column;
-  // position: fixed;
-  // transform: translateX(0);
-  // width: 332px;
-  // height: 570px;
-  // background-color: $color-black;
-  // right: 0;
-  // top: 0;
-  // padding-top: 100px;
-  // align-items: center;
+
   transform: translateX(0);
   .nav__item {
     margin-right: 0;
