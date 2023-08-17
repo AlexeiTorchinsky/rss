@@ -2,8 +2,11 @@ import './index.html';
 import './sass/main.scss';
 
 import { burger } from './modules/burger';
+import { move } from './modules/carusel';
+
 
 burger();
+move();
 
 console.log(`
 Вёрстка соответствует макету. Ширина экрана 768px +26
