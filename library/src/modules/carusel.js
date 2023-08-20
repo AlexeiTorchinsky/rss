@@ -4,25 +4,29 @@
 
 
 const sliderImages = document.querySelector('.slider__images');
+const sliderImagesAll = document.querySelectorAll('.slider__img');
 export const arrowLeft = document.querySelector('.arrows-btn_left');
 export const arrowRight = document.querySelector('.arrows-btn_right');
   
-  let position = 1;
+console.log( 'sliderImagesAll.length=', sliderImagesAll.length)
+  let position = 0;
   let step = 475;
+  let counter = 0;
   export const moveLeft = () => {
-    sliderImages.style.transform = `translateX(-${step * position}px)` ;
-    position += 1;
-    if (position === 5) {
+    position += step;
+    console.log(position)
+
+    sliderImages.style.transform = `translateX(-${position}px)` ;
+    if (position >= (sliderImagesAll.length - 1) * step) {
       arrowLeft.removeEventListener('click', moveLeft)
     }
-    console.log(position)
 
   }
 
   export const  moveRight = () => {
-    sliderImages.style.transform = `translateX(${step * position}px)` ;
-    position -= 1;
-    if (position === -4) {
-      arrowLeft.removeEventListener('click', moveRight)
-    }
+    position = 0;
+    position += step;
+    sliderImages.style.transform = `translateX(${ position}px)` ;
+    // position -= 1;
+
   }
