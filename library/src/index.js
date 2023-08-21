@@ -16,4 +16,7 @@ arrowRight.addEventListener('click', moveRight)
 
 
  
+document.addEventListener("DOMContentLoaded", () => {
+    arrowRight.removeEventListener('click', moveRight);
+  })
 
