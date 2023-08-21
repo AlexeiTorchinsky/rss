@@ -138,6 +138,15 @@
   &:hover {
     cursor: pointer;
   }
+
+}
+
+.pagination__button-container._active {
+
+  &:hover {
+    cursor: default;
+  }
+
 }
 
 .pagination__button-container_hidden {
@@ -161,9 +170,9 @@
 
 @media screen and (max-width: 920px ) {
   .pagination__button {
-    background-color: $color-dark;
+    background-color: $color-black;
   }
   .pagination__button_first {
-    background-color: $color-brown;
+    background-color: $color-black;
   }
 }

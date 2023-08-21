@@ -1,8 +1,6 @@
-
-
-
 const sliderImages = document.querySelector('.slider__images');
 const sliderImagesAll = document.querySelectorAll('.slider__img');
+const paginationButtons = document.querySelectorAll('.pagination__button');
 export const arrowLeft = document.querySelector('.arrows-btn_left');
 export const arrowRight = document.querySelector('.arrows-btn_right');
   
@@ -27,9 +25,11 @@ console.log( 'sliderImagesAll.length=', sliderImagesAll.length)
       arrowLeft.removeEventListener('click', moveLeft)
     } 
     }
+
+
     setTimeout(() => {
       isAnimating = false;
-    }, 500);
+    }, 1000);
   
   }
   
@@ -57,6 +57,6 @@ console.log( 'sliderImagesAll.length=', sliderImagesAll.length)
     
     setTimeout(() => {
       isAnimating = false;
-    }, 500);
+    }, 1000);
     
   }
