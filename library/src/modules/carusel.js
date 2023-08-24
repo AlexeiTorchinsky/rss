@@ -1,6 +1,6 @@
 const sliderImages = document.querySelector('.slider__images');
 const sliderImagesAll = document.querySelectorAll('.slider__img');
-const paginationButtons = document.querySelectorAll('.pagination__button');
+export const paginationButtons = document.querySelectorAll('.pagination__button');
 export const arrowLeft = document.querySelector('.arrows-btn_left');
 export const arrowRight = document.querySelector('.arrows-btn_right');
   
@@ -18,7 +18,8 @@ console.log( 'sliderImagesAll.length=', sliderImagesAll.length)
 
     if (position >= 0) {
       arrowRight.addEventListener('click',  moveRight);
-      sliderImages.style.transform = `translateX(-${position}px)` ;
+      sliderImages.style.transform = `translateX(-${position}px)`;
+
     }
 
     if (position >= (sliderImagesAll.length - 1) * step) {

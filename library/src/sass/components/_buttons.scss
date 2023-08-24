@@ -2,11 +2,11 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  color: $color-dark;
+  background-color: $color-dark;
 }
 
 .pagination__button._active {
-  color: $color-brown;
+  background-color: $color-brown;
 
   &:hover {
     cursor: default;

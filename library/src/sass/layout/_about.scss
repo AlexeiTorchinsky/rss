@@ -91,7 +91,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1430px) {
       width: 450px;
     }
   }
@@ -125,7 +125,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1430px) {
     width: 130px;
   }
 }
@@ -151,28 +151,28 @@
 
 .pagination__button-container_hidden {
   display: none;
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1430px) {
     display: flex;
   }
     
   
 }
 
-.pagination__button_brown {
-  background-color: $color-brown;
-}
-.pagination__button_black {
-  background-color: $color-black;
-}
-.pagination__button_dark {
-  background-color: $color-dark;
-}
+// .pagination__button_brown {
+//   // background-color: $color-brown;
+// }
+// .pagination__button_black {
+//   // background-color: $color-black;
+// }
+// .pagination__button_dark {
+//   // background-color: $color-dark;
+// }
 
-@media screen and (max-width: 920px ) {
-  .pagination__button {
-    background-color: $color-black;
-  }
-  .pagination__button_first {
-    background-color: $color-black;
-  }
-}
+// @media screen and (max-width: 920px ) {
+//   .pagination__button {
+//     // background-color: $color-black;
+//   }
+//   .pagination__button_first {
+//     // background-color: $color-black;
+//   }
+// }
