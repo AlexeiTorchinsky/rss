@@ -13,18 +13,22 @@ burger();
 
 arrowLeft.addEventListener('click',  moveLeft);
 arrowRight.addEventListener('click', moveRight)
+;
 
 
- 
+window.addEventListener(`resize`, () => {
+  if (window.screen.width < 1431) {
+    paginationButtons[0].classList.add('_active');
+    paginationButtons[1].classList.remove('_active')
+  } else {
+    paginationButtons[1].classList.add('_active');
+    paginationButtons[0].classList.remove('_active');
+  }
+}, false);
+
 
 
 window.addEventListener('load',  () => {
   arrowRight.removeEventListener('click', moveRight);
-  if (window.screen.width < 1431) {
-    paginationButtons[0].classList.toggle('_active');
-  } else {
-    paginationButtons[1].classList.toggle('_active');
-  }
- 
 })
 
