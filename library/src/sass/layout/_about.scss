@@ -54,7 +54,11 @@
 .arrows-btns {
   width: 24px;
   height: 24px;
+  &:hover {
+    cursor: pointer;
+  }
 }
+
 
 .arrows-btn_left {
   background-image: url("../../src/svg/Carret_Left.svg");
@@ -63,29 +67,17 @@
 .arrows-btn_right {
   background-image: url("../../src/svg/Carret_Right.svg");
 }
-
+._not-active {
+  opacity: 0.4;
+  &:hover {
+    cursor: default;
+  }
+}
 .about__slider {
   position: relative;
-  // display: flex;
-  // // justify-content: space-between;
-  // gap: 25px;
-  // margin-bottom: 35px;
-    overflow: hidden;
-  // @media screen and (max-width: 920px) {
-  //   // width: 450px;
-  //   // margin-left: auto;
-  //   // margin-right: auto;
-  //   margin-bottom: 20px;
-  //   img {
-  //     display: block;
-  //     margin-left: auto;
-  //     margin-right: auto;
+  overflow: hidden;
 
-  //   }
-  //   .slider__img_hidden {
-  //     // display: none;
-  //   }
-  // }
+ 
 }
   .slider__images-container { 
     overflow: hidden;
@@ -100,12 +92,12 @@
   transition: all 1s ease-in-out;
   position: relative;
   display: flex;
-  // justify-content: space-between;
+  
   gap: 25px;
   margin-bottom: 35px;
-  // overflow: hidden;
+  
   @media screen and (max-width: 1440px) {
-    // width: 450px;
+    
     margin-left: auto;
     margin-right: auto;
    
@@ -115,9 +107,7 @@
       margin-right: auto;
       
     }
-    .slider__img_hidden {
-      // display: none;
-    }
+    
   }
 }
 .slider__pagination {
@@ -158,21 +148,3 @@
   
 }
 
-// .pagination__button_brown {
-//   // background-color: $color-brown;
-// }
-// .pagination__button_black {
-//   // background-color: $color-black;
-// }
-// .pagination__button_dark {
-//   // background-color: $color-dark;
-// }
-
-// @media screen and (max-width: 920px ) {
-//   .pagination__button {
-//     // background-color: $color-black;
-//   }
-//   .pagination__button_first {
-//     // background-color: $color-black;
-//   }
-// }
