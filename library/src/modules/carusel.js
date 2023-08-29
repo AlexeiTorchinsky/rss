@@ -81,7 +81,6 @@ console.log( 'sliderImagesAll.length=', sliderImagesAll.length)
       isAnimating = true;
       const buttonIndex = Array.from(event.target.parentNode.parentNode.children).indexOf(event.target.parentNode);
     
-   
     if (paginationButtons[buttonIndex].classList.contains('_active')) {
       return; 
     }
