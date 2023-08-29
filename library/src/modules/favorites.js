@@ -101,9 +101,19 @@ export const changeBookCard = (season) => {
 
 }
 
+let selectedSeason = null;
+
+
 radioButtons.forEach(button => {
   button.addEventListener('click', () => {
       const selectedOption = button.nextElementSibling.textContent;
-      changeBookCard(selectedOption);
+
+      if (selectedOption !== selectedSeason) {
+        selectedSeason = selectedOption; 
+        changeBookCard(selectedOption);
+      }
+    });
+
+      // changeBookCard(selectedOption);
   });
-});
+
