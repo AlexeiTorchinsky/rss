@@ -82,17 +82,17 @@ export const changeBookCard = (season) => {
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
             
-
+            bookTitle[i].classList.remove('fade-out');
+            bookAuthor[i].classList.remove('fade-out');
+            bookText[i].classList.remove('fade-out');
+            bookImg[i].classList.remove('fade-out');
             
             bookTitle[i].classList.add('fade-in');
             bookAuthor[i].classList.add('fade-in');
             bookText[i].classList.add('fade-in');
             bookImg[i].classList.add('fade-in');
 
-            bookTitle[i].classList.remove('fade-out');
-            bookAuthor[i].classList.remove('fade-out');
-            bookText[i].classList.remove('fade-out');
-            bookImg[i].classList.remove('fade-out');
+          
   
           } , i * 100 + 500)
   
