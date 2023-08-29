@@ -64,39 +64,24 @@ export   const changeBookCard = (season) => {
             if (season === 'Winter') {
 
               seasonData = winterData;
-              // bookImg[i].src = `images/book-card${i + 1}.png`;
+              bookImg[i].src = `images/book-card${i + 1}.png`;
 
             } else if (season === 'Spring') {
               seasonData = springData;
-              // bookImg[i].src = `images/book-card${i + 5}.png`;
+              bookImg[i].src = `images/book-card${i + 5}.png`;
 
             } else if (season === 'Summer') {
               seasonData = summerData;
-              // bookImg[i].src = `images/book-card${i + 9}.png`
+              bookImg[i].src = `images/book-card${i + 9}.png`
             } else if (season === 'Autumn') {
               seasonData = autumnData;
-              // bookImg[i].src = `images/book-card${i + 13}.png`
+              bookImg[i].src = `images/book-card${i + 13}.png`
             }
 
             bookTitle[i].innerHTML = seasonData.title[i];
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
             
-            switch(season) {
-              case 'Winter': 
-                bookImg[i].src = `images/book-card${i + 1}.png`;
-                break;
-              case 'Spring':
-                bookImg[i].src = `images/book-card${i + 5}.png`;
-                break;  
-              case 'Summer':
-                bookImg[i].src = `images/book-card${i + 9}.png`;
-                break;
-              case 'Autumn':
-                bookImg[i].src = `images/book-card${i + 13}.png`;
-                break ;
-            }
-
             
             bookTitle[i].classList.remove('fade-out');
             bookAuthor[i].classList.remove('fade-out');
