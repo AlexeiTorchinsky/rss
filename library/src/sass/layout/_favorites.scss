@@ -50,6 +50,9 @@
   width: 17px;
     // transform:scale(1.0);
   margin-right: 15px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .label-for-radio {

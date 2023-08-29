@@ -101,7 +101,7 @@ export const changeBookCard = (season) => {
             bookText[i].classList.remove('fade-out');
             bookImg[i].classList.remove('fade-out');
   
-          } , i * 50 + 500)
+          } , i * 100 + 500)
   
           
         }
