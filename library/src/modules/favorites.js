@@ -45,8 +45,8 @@ const bookText = document.querySelectorAll('.card__text');
 const bookImg = document.querySelectorAll('.book-card__img');
 
 
-export const changeBookCard = (season) => {
-
+export const changeBookCard = async (season) => {
+  
           for (let i = 0; i < bookTitle.length; i++){
             setTimeout(
               () => {
@@ -56,7 +56,7 @@ export const changeBookCard = (season) => {
               bookText[i].classList.add('fade-out');
               bookImg[i].classList.add('fade-out');
             },
-           i * 50);
+            50);
           
           setTimeout ( () => {
 
@@ -94,7 +94,7 @@ export const changeBookCard = (season) => {
 
           
   
-          } , i * 100 + 500)
+          } , 600)
   
           
         }
