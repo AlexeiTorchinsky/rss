@@ -46,9 +46,7 @@ const bookImg = document.querySelectorAll('.book-card__img');
 
 
 export const changeBookCard = (season) => {
-        // labelForRadio.forEach(label => {
-          
-          // if (label.innerHTML === 'Spring') {
+
           for (let i = 0; i < bookTitle.length; i++){
             setTimeout(
               () => {
@@ -84,12 +82,7 @@ export const changeBookCard = (season) => {
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
             
-            // bookImg[i].src = `images/book-card${i + 5}.png`
-  
-            // bookTitle[i].innerHTML = springData.title[i];
-            // bookAuthor[i].innerHTML = springData.author[i];
-            // bookText[i].innerHTML = springData.text[i];
-            // bookImg[i].src = `images/book-card${i + 5}.png`;
+
             
             bookTitle[i].classList.add('fade-in');
             bookAuthor[i].classList.add('fade-in');
@@ -105,13 +98,11 @@ export const changeBookCard = (season) => {
   
           
         }
-        // }
-    // })
+
 }
 
 radioButtons.forEach(button => {
   button.addEventListener('click', () => {
-      // Получаем значение выбранной опции
       const selectedOption = button.nextElementSibling.textContent;
       changeBookCard(selectedOption);
   });
