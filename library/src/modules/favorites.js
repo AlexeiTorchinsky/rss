@@ -45,7 +45,7 @@ const bookText = document.querySelectorAll('.card__text');
 const bookImg = document.querySelectorAll('.book-card__img');
 
 
-export const changeBookCard = async (season) => {
+export   const changeBookCard = (season) => {
   
           for (let i = 0; i < bookTitle.length; i++){
             setTimeout(
