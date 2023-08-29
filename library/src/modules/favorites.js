@@ -50,13 +50,9 @@ export   const changeBookCard = (season) => {
           for (let i = 0; i < bookTitle.length; i++){
             setTimeout(
               () => {
-              
-              bookTitle[i].classList.add('fade-out');
-              bookAuthor[i].classList.add('fade-out');
-              bookText[i].classList.add('fade-out');
-              bookImg[i].classList.add('fade-out');
+              bookCards[i].classList.add('fade-out');
             },
-            50);
+            100);
           
           setTimeout ( () => {
 
@@ -81,21 +77,11 @@ export   const changeBookCard = (season) => {
             bookTitle[i].innerHTML = seasonData.title[i];
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
-            
-            
-            bookTitle[i].classList.remove('fade-out');
-            bookAuthor[i].classList.remove('fade-out');
-            bookText[i].classList.remove('fade-out');
-            bookImg[i].classList.remove('fade-out');
-            
-            bookTitle[i].classList.add('fade-in');
-            bookAuthor[i].classList.add('fade-in');
-            bookText[i].classList.add('fade-in');
-            bookImg[i].classList.add('fade-in');
 
-          
-  
-          } , 600)
+            bookCards[i].classList.remove('fade-out');
+            bookCards[i].classList.add('fade-in');
+          }
+          , 600)
   
           
         }
@@ -115,6 +101,6 @@ radioButtons.forEach(button => {
       }
     });
 
-      // changeBookCard(selectedOption);
+
   });
 
