@@ -43,12 +43,12 @@ export   const changeBookCard = (season) => {
               bookImg[i].src = `images/book-card${i + 13}.png`
             }
 
-
+            bookCards[i].classList.remove('fade-out');
             bookTitle[i].innerHTML = seasonData.title[i];
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
 
-            bookCards[i].classList.remove('fade-out');
+           
             bookCards[i].classList.add('fade-in');
           }
           , 600)
