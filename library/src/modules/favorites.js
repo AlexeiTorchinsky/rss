@@ -44,14 +44,14 @@ export   const changeBookCard = (season) => {
             }
 
             bookCards[i].classList.remove('fade-out');
+
             bookTitle[i].innerHTML = seasonData.title[i];
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
 
-           
             bookCards[i].classList.add('fade-in');
           }
-          , 600)
+          , 800)
   
           
         }
