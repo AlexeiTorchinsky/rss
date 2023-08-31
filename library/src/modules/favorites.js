@@ -5,6 +5,7 @@ import { winterData, springData, summerData, autumnData} from  './seasons-data';
 const labelForRadio = document.querySelectorAll('.label-for-radio');
 export const radioButtons = document.querySelectorAll ('.radio-button');
 const bookCards = document.querySelectorAll('.book-cards__card');
+const allBookCards = document.querySelector('.favorites__book-cards')
 const bookTitle = document.querySelectorAll('.card__h4__span1');
 const bookAuthor = document.querySelectorAll('.card__h4__span2')
 const bookText = document.querySelectorAll('.card__text');
@@ -14,12 +15,13 @@ const bookImg = document.querySelectorAll('.book-card__img');
 
 
 
-export   const changeBookCard = (season) => {
+export   const changeBookCard =  (season) => {
   
           for (let i = 0; i < bookTitle.length; i++){
             setTimeout(
               () => {
-              bookCards[i].classList.add('fade-out');
+                allBookCards.classList.add('fade-out');
+              // bookCards[i].classList.add('fade-out');
             },
             100);
           
@@ -43,15 +45,17 @@ export   const changeBookCard = (season) => {
               bookImg[i].src = `images/book-card${i + 13}.png`
             }
 
-            bookCards[i].classList.remove('fade-out');
+            // bookCards[i].classList.remove('fade-out');
+            allBookCards.classList.remove('fade-out');
 
             bookTitle[i].innerHTML = seasonData.title[i];
             bookAuthor[i].innerHTML = seasonData.author[i];
             bookText[i].innerHTML =seasonData.text[i];
 
-            bookCards[i].classList.add('fade-in');
+            // bookCards[i].classList.add('fade-in');
+            allBookCards.classList.add('fade-in');
           }
-          , 800)
+          , 500)
   
           
         }
