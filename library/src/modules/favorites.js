@@ -16,14 +16,14 @@ const bookImg = document.querySelectorAll('.book-card__img');
 
 
 export   const changeBookCard =  (season) => {
-  allBookCards.classList.add('fade-out');
+  
           for (let i = 0; i < bookTitle.length; i++){
-            // setTimeout(
-            //   () => {
-               
-            //   // bookCards[i].classList.add('fade-out');
-            // },
-            // 100);
+            setTimeout(
+              () => {
+                allBookCards.classList.add('fade-out');
+              // bookCards[i].classList.add('fade-out');
+            },
+            100);
           
           setTimeout ( () => {
 
