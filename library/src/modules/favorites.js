@@ -16,14 +16,14 @@ const bookImg = document.querySelectorAll('.book-card__img');
 
 
 export   const changeBookCard =  (season) => {
-  
+  allBookCards.classList.add('fade-out');
           for (let i = 0; i < bookTitle.length; i++){
-            setTimeout(
-              () => {
-                allBookCards.classList.add('fade-out');
-              // bookCards[i].classList.add('fade-out');
-            },
-            100);
+            // setTimeout(
+            //   () => {
+               
+            //   // bookCards[i].classList.add('fade-out');
+            // },
+            // 100);
           
           setTimeout ( () => {
 
@@ -55,7 +55,7 @@ export   const changeBookCard =  (season) => {
             // bookCards[i].classList.add('fade-in');
             allBookCards.classList.add('fade-in');
           }
-          , 500)
+          , 600)
   
           
         }
