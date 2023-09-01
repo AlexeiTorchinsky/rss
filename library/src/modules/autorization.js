@@ -2,9 +2,11 @@ import { burgerIcon, body, headerNavMenu, bodyCover, headerNavList, removeClassN
 
 const profileIcon = document.querySelector('.header__profile-icon');
 const registerButton = document.querySelector('.autorisation-menu__register');
+const loginButton = document.querySelector('.autorisation-menu__login');
 const registerModal = document.querySelector('.modal-register');
+const loginModal = document.querySelector('.modal-login');
 export const autorizationMenu = document.querySelector('.autorisation-menu');
-export const  closeRegister = document.querySelector('.modal-register__close-btn');
+export const  closeRegister = document.querySelector('.modal__close-btn');
 
 const closeBurger = () => {
     burgerIcon.classList.remove('_active');
@@ -31,9 +33,6 @@ window.addEventListener('click', (e) => {
 const openRegisterModal = () => {
     autorizationMenu.classList.remove('_opened');
     bodyCover.classList.add('_active', 'body__cover_modal-opened');
-    
-    // bodyCover.style.background = 'rgba(142, 142, 142, 0.5)';
-    // bodyCover.style.zIndex = '20';
     registerModal.classList.add('modal-register_opened')
     body.classList.add('_locked');
     window.addEventListener('click', e => {
@@ -46,6 +45,21 @@ const openRegisterModal = () => {
       })
 }
 
+const openLoginModal = () => {
+    autorizationMenu.classList.remove('_opened');
+    bodyCover.classList.add('_active', 'body__cover_modal-opened');
+    loginModal.classList.add('modal-login_opened')
+    body.classList.add('_locked');
+    window.addEventListener('click', e => {
+        const target = e.target;
+        if (target.classList.contains('body__cover') ) {
+          removeClassName();
+          loginModal.classList.remove('modal-login_opened');
+        }
+      
+      })
+}
+
 registerButton.addEventListener('click', () => {
     openRegisterModal();
 })
@@ -53,4 +67,7 @@ registerButton.addEventListener('click', () => {
 closeRegister.addEventListener('click', () => {
     removeClassName();
     registerModal.classList.remove('modal-register_opened');
+    loginModal.classList.remove('modal-login_opened');
 })
+
+loginButton.addEventListener('click',  openLoginModal)

@@ -1,0 +1,17 @@
+.modal-login {
+    display: none;
+  
+}
+.modal-login_opened {
+    display: flex;
+    width: 250px;
+    height: 262px;
+    flex-direction: column;
+    position: fixed;
+    z-index: 25;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    padding: 20px 25px 0;
+}
