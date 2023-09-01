@@ -17,6 +17,11 @@ body._locked{
   display: none;
   
 }
+
+.body__cover_modal-opened {
+  background-color: rgba(142, 142, 142, 0.5);
+  z-index: 20;
+}
 .body__cover._active {
   display: block;
   position: fixed;

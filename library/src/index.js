@@ -4,7 +4,7 @@ import './sass/main.scss';
 import { burger } from './modules/burger';
 import { moveLeft, arrowLeft, moveRight, arrowRight, paginationButtons } from './modules/carusel';
 import { changeBookCard, radioButtons } from './modules/favorites';
-
+import { profileIcon, autorizationMenu} from './modules/autorization';
 
 
 

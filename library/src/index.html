@@ -36,6 +36,18 @@
         </nav>
         <img class="header__profile-icon" src="./svg/icon_profile.svg" alt="" class="header__profile-icon">
       </div>
+      <div class="autorisation-menu">
+        <p class="autorisation-menu__title">
+          Profile
+        </p>
+        <hr class="autorisation-menu__underline">
+        <p class="autorisation-menu__login">
+          Log In
+        </p>
+        <p class="autorisation-menu__register">
+          Register
+        </p>
+      </div>
     </header>
     <main class="main">
       <section class="welcome">
@@ -368,6 +380,23 @@
       </div>
     </footer>
   </div>
-  
+  <div class="modal-register">
+    <img class="modal-register__close-btn" src="./svg/close_btn.svg" alt="close modal window register">
+    <p class="modal-register__title">
+      Register
+    </p>
+    <label class="register-inputs__label"for="register-name">First name</label>
+    <input class="register-input" type="text" id="register-name">
+    <label class="register-inputs__label"for="register-last-name">Last name</label>
+    <input class="register-input" type="text" id="register-name">
+    <label class="register-inputs__label"for="register-name">E-mail</label>
+    <input class="register-input" type="email" id="register-email">
+    <label class="register-inputs__label"for="register-last-name">Password</label>
+    <input class="register-input" type="text" id="register-password">
+    <button class="button card__button-buy register-button">Sign Up</button>
+    <div class="register-footer">
+      <span class="register-footer__span1">Already have an account?</span><span class="register-footer__span2">Login</span>
+    </div>
+  </div>
 </body>
 </html>
