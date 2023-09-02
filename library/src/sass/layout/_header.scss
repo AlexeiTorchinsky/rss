@@ -24,21 +24,16 @@
   align-items: center;
   position: relative;
 }
-// .header__nav {
-//   @media screen and (max-width: 1025px) {
-//     display: none;
-//   }
-// }
 
 .header__nav._active {
-  // display: flex;
+
   position: relative;
 }
 
 .nav__items {
   list-style-type: none;
   display: flex;
-  // flex-direction: row;
+
   padding-left: 0;
   margin: 0;
   @media screen and (max-width: 1025px) {
@@ -92,9 +87,11 @@ ul.nav__items li:last-child {
 }
 
 .header__profile-icon {
+  transition: all 0.3s ease 0s;
   &:hover {
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.6;
+    transform: translateY(1px);
   }
  
   @media screen and (max-width: 1025px) {
