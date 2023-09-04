@@ -92,14 +92,38 @@ export const setUserData = () => {
     profileIcon.classList.add('_hidden');
     profileIconContainer.classList.add('_logged');
     profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
-    autorizationMenu.classList.add('_authorised');
+    profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
+    autorizationMenu.classList.add('_authorized');
+    registerButton.textContent = 'Log out';
+    loginButton.textContent = 'My profile';
+
+
+
+    registerButton.addEventListener('click', () => {
+      if (autorizationMenu.classList.contains('_authorized')) {
+        autorizationMenu.classList.remove('_authorized');
+        profileIcon.classList.remove('_hidden');
+        profileIconContainer.classList.remove('_logged');
+        profileIconContainer.innerHTML = '<img class="header__profile-icon" src="library/src/svg/icon_profile.svg" alt="" class="header__profile-icon">';
+        profileIconContainer.removeAttribute('title', `${userData.firstName} ${userData.lastName}`)
+        registerButton.textContent = 'Register';
+        loginButton.textContent = 'Log in';
+      }
+    })
 
   }
+
+
+
+
 }
 
 signIn.addEventListener('click', setUserData);
 
-if (autorizationMenu.classList.contains('_authorised')) {
+if (autorizationMenu.classList.contains('_authorized')) {
   registerButton.textContent = 'My profile';
   loginButton.textContent = 'Log out';
 }
+
+
+
