@@ -25,7 +25,4 @@ window.addEventListener('load',  () => {
   arrowRight.classList.add('_not-active');
 })
 
-if (autorizationMenu.classList.contains('_authorised')) {
-  registerButton.textContent = 'My profile';
-  loginButton.textContent = 'Log out';
-}
+

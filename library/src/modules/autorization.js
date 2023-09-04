@@ -103,7 +103,3 @@ loginButton2.addEventListener('click', () => {
   openRegisterModal();
 })
 
-if (autorizationMenu.classList.contains('_authorised')) {
-  registerButton.textContent = 'My profile';
-  loginButton.textContent = 'Log out';
-}
