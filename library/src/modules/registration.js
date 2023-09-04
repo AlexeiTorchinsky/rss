@@ -1,5 +1,17 @@
-import { removeClassName } from "./burger";
-import { registerModal } from './autorization';
+import { 
+  removeClassName,
+  burgerIcon
+ } from "./burger";
+
+import {
+  registerModal,
+  profileIcon,
+  registerButton,
+  loginButton,
+  profileIconContainer,
+  autorizationMenu, 
+  closeBurger
+} from './autorization';
 
 const signIn = document.querySelector('.register-button')
 const emailInput = document.querySelector('.register-input__email');
@@ -7,7 +19,13 @@ const passwordInput = document.querySelector('.register-input__password');
 const userName = document.querySelector('.register-input__user-name');
 const userLastName = document.querySelector('.register-input__user-last-name');
 
+const removeMistake = () => {
 
+  userName.classList.remove('mistake');
+  emailInput.classList.remove('mistake');
+  passwordInput.classList.remove('mistake');
+  userLastName.classList.remove('mistake');
+}
 
 export const setUserData = () => {
   const firstName = document.getElementById("register-name").value;
@@ -15,13 +33,7 @@ export const setUserData = () => {
   const email = document.getElementById("register-email").value;
   const password = document.getElementById("register-password").value;
 
-  const removeMistake = () => {
 
-    userName.classList.remove('mistake');
-    emailInput.classList.remove('mistake');
-    passwordInput.classList.remove('mistake');
-    userLastName.classList.remove('mistake');
-  }
 
   removeMistake();
 
@@ -37,7 +49,7 @@ export const setUserData = () => {
     return;
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[^\s@]+[-.\w]*@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email) || !email) {
     emailInput.placeholder = 'please enter valid e-mail';
     emailInput.classList.add('mistake');
@@ -76,7 +88,18 @@ export const setUserData = () => {
     document.getElementById("register-password").value = "";
 
     removeClassName();
+
+    profileIcon.classList.add('_hidden');
+    profileIconContainer.classList.add('_logged');
+    profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
+    autorizationMenu.classList.add('_authorised');
+
   }
 }
 
 signIn.addEventListener('click', setUserData);
+
+if (autorizationMenu.classList.contains('_authorised')) {
+  registerButton.textContent = 'My profile';
+  loginButton.textContent = 'Log out';
+}

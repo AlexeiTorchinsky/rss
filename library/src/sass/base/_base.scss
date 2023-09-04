@@ -18,10 +18,7 @@ body._locked{
   
 }
 
-.body__cover_modal-opened {
-  background-color: rgba(71, 71, 71, 0.8);
-  z-index: 20;
-}
+
 .body__cover._active {
   display: block;
   position: fixed;
@@ -30,8 +27,13 @@ body._locked{
   width: 100%;
   height: 100%;
   //background-color: rgba(41, 41, 41, 0.6);
-  z-index: 1;
+  z-index: 5;
   
+}
+
+.body__cover._modal-opened {
+  background-color: rgba(71, 71, 71, 0.8);
+  z-index: 20;
 }
 // font-family: 'Forum', cursive;
 // font-family: 'Inter', sans-serif;

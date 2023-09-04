@@ -7,20 +7,21 @@ import {
   removeClassName,
 } from "./burger";
 
-const profileIcon = document.querySelector(".header__profile-icon");
-const registerButton = document.querySelector(".autorisation-menu__register");
-const loginButton = document.querySelector(".autorisation-menu__login");
+export const profileIcon = document.querySelector(".header__profile-icon");
+export const profileIconContainer = document.querySelector('.header__profile-icon-container');
+export const registerButton = document.querySelector(".autorisation-menu__register");
+export const loginButton = document.querySelector(".autorisation-menu__login");
 export const registerModal = document.querySelector(".modal-register");
 const loginModal = document.querySelector(".modal-login");
 export const autorizationMenu = document.querySelector(".autorisation-menu");
 export const closeRegister = document.querySelector(".modal__close-btn");
 export const closeLogin = document.querySelector('.login-close-btn');
-const registerButton2 = document.querySelector('.register-footer__span2');
-const loginButton2 = document.querySelector('.login-footer__span2');
+export const registerButton2 = document.querySelector('.register-footer__span2');
+export const loginButton2 = document.querySelector('.login-footer__span2');
 const registerButton3 = document.querySelector('.digital-library-cards__button');
 const loginButton3 = document.querySelector('.digital-library-cards__button2');
 
-const closeBurger = () => {
+export const closeBurger = () => {
   burgerIcon.classList.remove("_active");
   headerNavMenu.classList.remove("_active");
   headerNavList.classList.remove("_active");
@@ -28,7 +29,7 @@ const closeBurger = () => {
   bodyCover.classList.remove("_active");
 };
 
-profileIcon.addEventListener("click", () => {
+profileIconContainer.addEventListener("click", () => {
   if (burgerIcon.classList.contains("_active")) {
     closeBurger();
   }
@@ -38,16 +39,16 @@ profileIcon.addEventListener("click", () => {
 window.addEventListener("click", (e) => {
   if (
     autorizationMenu.classList.contains("_opened") &&
-    e.target !== profileIcon &&
-    !autorizationMenu.contains(e.target)
-  ) {
+    e.target !== profileIcon && e.target !== profileIconContainer &&
+    !autorizationMenu.contains(e.target)) 
+  {
     autorizationMenu.classList.remove("_opened");
   }
 });
 
 const openRegisterModal = () => {
   autorizationMenu.classList.remove("_opened");
-  bodyCover.classList.add("_active", "body__cover_modal-opened");
+  bodyCover.classList.add("_active", "_modal-opened");
   registerModal.classList.add("modal-register_opened");
   body.classList.add("_locked");
   window.addEventListener("click", (e) => {
@@ -61,7 +62,7 @@ const openRegisterModal = () => {
 
 const openLoginModal = () => {
   autorizationMenu.classList.remove("_opened");
-  bodyCover.classList.add("_active", "body__cover_modal-opened");
+  bodyCover.classList.add("_active", "_modal-opened");
   loginModal.classList.add("modal-login_opened");
   body.classList.add("_locked");
   window.addEventListener("click", (e) => {
@@ -101,3 +102,8 @@ loginButton2.addEventListener('click', () => {
   loginModal.classList.remove("modal-login_opened");
   openRegisterModal();
 })
+
+if (autorizationMenu.classList.contains('_authorised')) {
+  registerButton.textContent = 'My profile';
+  loginButton.textContent = 'Log out';
+}

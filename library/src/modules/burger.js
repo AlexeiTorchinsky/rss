@@ -24,6 +24,7 @@ export const toggleClassName = () => {
   body.classList.toggle('_locked');
   bodyCover.classList.toggle('_active');
   autorizationMenu.classList.remove('_opened');
+  bodyCover.classList.remove('_modal-opened')
 }
 export function burger() {
   
