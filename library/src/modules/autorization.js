@@ -10,7 +10,7 @@ import {
 const profileIcon = document.querySelector(".header__profile-icon");
 const registerButton = document.querySelector(".autorisation-menu__register");
 const loginButton = document.querySelector(".autorisation-menu__login");
-const registerModal = document.querySelector(".modal-register");
+export const registerModal = document.querySelector(".modal-register");
 const loginModal = document.querySelector(".modal-login");
 export const autorizationMenu = document.querySelector(".autorisation-menu");
 export const closeRegister = document.querySelector(".modal__close-btn");
