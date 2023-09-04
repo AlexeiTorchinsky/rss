@@ -63,7 +63,7 @@ module.exports = {
         test: /\.svg$/,
         type: 'asset/resource',
         generator: {
-        filename: 'icons/[name].[contenthash][ext]'
+        filename: 'icons/[name][ext]'
         },
       },
     ],

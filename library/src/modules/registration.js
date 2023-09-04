@@ -104,7 +104,7 @@ export const setUserData = () => {
         autorizationMenu.classList.remove('_authorized');
         profileIcon.classList.remove('_hidden');
         profileIconContainer.classList.remove('_logged');
-        profileIconContainer.innerHTML = '<img class="header__profile-icon" src="library/src/svg/icon_profile.svg" alt="" class="header__profile-icon">';
+        profileIconContainer.innerHTML = '<img class="header__profile-icon" src="icons/icon_profile.svg" alt="" class="header__profile-icon">';
         profileIconContainer.removeAttribute('title', `${userData.firstName} ${userData.lastName}`)
         registerButton.textContent = 'Register';
         loginButton.textContent = 'Log in';
