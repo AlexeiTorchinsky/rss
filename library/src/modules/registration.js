@@ -5,19 +5,22 @@ import {
 
 import {
   registerModal,
-  profileIcon,
+  // profileIcon,
   registerButton,
   loginButton,
   profileIconContainer,
   autorizationMenu, 
-  closeBurger
+  closeBurger, 
+  openRegisterModal,
+  openAuthorizationMenu
 } from './autorization';
 
-const signIn = document.querySelector('.register-button')
+const signIn = document.querySelector('.register-button');
 const emailInput = document.querySelector('.register-input__email');
 const passwordInput = document.querySelector('.register-input__password');
 const userName = document.querySelector('.register-input__user-name');
 const userLastName = document.querySelector('.register-input__user-last-name');
+const autorizationMenuTitle = document.querySelector('.autorisation-menu__title');
 
 const removeMistake = () => {
 
@@ -27,11 +30,34 @@ const removeMistake = () => {
   userLastName.classList.remove('mistake');
 }
 
+const generateCardNumb = () => {
+
+  const minNum = 100000000;
+  const maxNum = 999999999;
+  
+  const nineDigit = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+  function fromDecimal(decimal, alphabet) {
+    const base = alphabet.length;
+    let result = '';
+
+    while (decimal) {
+      result = alphabet[decimal % base] + result;
+      decimal = Math.floor(decimal / base);
+    }
+
+    return result; 
+  }
+  return fromDecimal(nineDigit, '0123456789ABCDEF')
+} 
+
+
 export const setUserData = () => {
   const firstName = document.getElementById("register-name").value;
   const lastName = document.getElementById("register-last-name").value;
   const email = document.getElementById("register-email").value;
   const password = document.getElementById("register-password").value;
+  const cardNumb = generateCardNumb();
 
 
 
@@ -71,7 +97,8 @@ export const setUserData = () => {
       firstName,
       lastName,
       email,
-      password
+      password,
+      cardNumb
     };
 
 
@@ -89,27 +116,39 @@ export const setUserData = () => {
 
     removeClassName();
 
-    profileIcon.classList.add('_hidden');
+    // profileIcon.classList.add('_hidden');
     profileIconContainer.classList.add('_logged');
     profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
     profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
     autorizationMenu.classList.add('_authorized');
+    autorizationMenuTitle.textContent = userData.cardNumb;
     registerButton.textContent = 'Log out';
     loginButton.textContent = 'My profile';
 
 
-
-    registerButton.addEventListener('click', () => {
-      if (autorizationMenu.classList.contains('_authorized')) {
+    const logOut = () => {
         autorizationMenu.classList.remove('_authorized');
-        profileIcon.classList.remove('_hidden');
         profileIconContainer.classList.remove('_logged');
-        profileIconContainer.innerHTML = '<img class="header__profile-icon" src="icons/icon_profile.svg" alt="" class="header__profile-icon">';
-        profileIconContainer.removeAttribute('title', `${userData.firstName} ${userData.lastName}`)
+        profileIconContainer.textContent = null;
+        profileIconContainer.removeAttribute('title')
+        autorizationMenu.classList.toggle('_opened');
         registerButton.textContent = 'Register';
         loginButton.textContent = 'Log in';
+        autorizationMenuTitle.textContent = 'Profile';
+    }
+
+    registerButton.removeEventListener('click',  openRegisterModal);
+   
+    registerButton.addEventListener('click', () => {
+
+      if (autorizationMenu.classList.contains('_authorized')) {
+        logOut();
+        registerButton.addEventListener('click',  openRegisterModal);
       }
     })
+    
+    
+    
 
   }
 
@@ -119,11 +158,4 @@ export const setUserData = () => {
 }
 
 signIn.addEventListener('click', setUserData);
-
-if (autorizationMenu.classList.contains('_authorized')) {
-  registerButton.textContent = 'My profile';
-  loginButton.textContent = 'Log out';
-}
-
-
 

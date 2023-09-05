@@ -7,7 +7,7 @@ import {
   removeClassName,
 } from "./burger";
 
-export const profileIcon = document.querySelector(".header__profile-icon");
+// export const profileIcon = document.querySelector(".header__profile-icon");
 export const profileIconContainer = document.querySelector('.header__profile-icon-container');
 export const registerButton = document.querySelector(".autorisation-menu__register");
 export const loginButton = document.querySelector(".autorisation-menu__login");
@@ -29,24 +29,27 @@ export const closeBurger = () => {
   bodyCover.classList.remove("_active");
 };
 
-profileIconContainer.addEventListener("click", () => {
+export const openAuthorizationMenu = () => {
   if (burgerIcon.classList.contains("_active")) {
     closeBurger();
   }
   autorizationMenu.classList.toggle("_opened");
-});
+
+}
+profileIconContainer.addEventListener("click", openAuthorizationMenu);
 
 window.addEventListener("click", (e) => {
   if (
     autorizationMenu.classList.contains("_opened") &&
-    e.target !== profileIcon && e.target !== profileIconContainer &&
+    // e.target !== profileIcon && 
+    e.target !== profileIconContainer &&
     !autorizationMenu.contains(e.target)) 
   {
     autorizationMenu.classList.remove("_opened");
   }
 });
 
-const openRegisterModal = () => {
+export const openRegisterModal = () => {
   autorizationMenu.classList.remove("_opened");
   bodyCover.classList.add("_active", "_modal-opened");
   registerModal.classList.add("modal-register_opened");
@@ -60,7 +63,7 @@ const openRegisterModal = () => {
   });
 };
 
-const openLoginModal = () => {
+export const openLoginModal = () => {
   autorizationMenu.classList.remove("_opened");
   bodyCover.classList.add("_active", "_modal-opened");
   loginModal.classList.add("modal-login_opened");

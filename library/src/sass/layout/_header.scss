@@ -88,9 +88,25 @@ ul.nav__items li:last-child {
 .header__profile-icon-container {
   width: 28px;
   height: 28px;
+  background-image: url('../../src/svg/icon_profile.svg');
+  transition: all 0.3s ease 0s;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transform: translateY(1px);
+  }
+ 
+  @media screen and (max-width: 1025px) {
+
+    position: absolute;
+    padding-right: 0;
+    right: 85px;
+    z-index: 10;
+  }
 }
 
 .header__profile-icon-container._logged {
+  background-image: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,38 +125,14 @@ ul.nav__items li:last-child {
     transform: translateY(1px);
   }
 
-  @media screen and (max-width: 1025px) {
-    position: absolute;
-    padding-right: 0;
-    right: 85px;
-    z-index: 10;
-  }
+
 }
 
 
-.header__profile-icon {
-  transition: all 0.3s ease 0s;
-  &:hover {
-    cursor: pointer;
-    opacity: 0.6;
-    transform: translateY(1px);
-  }
- 
-  @media screen and (max-width: 1025px) {
 
-    position: absolute;
-    padding-right: 0;
-    right: 85px;
-    z-index: 10;
-  }
-}
-
-.header__profile-icon._hidden {
-  display: none;
-}
 
 .autorisation-menu {
-  // display: none;
+  
   position: absolute;
   transform: translateY(-200%);
   transition: all 0.3s;
@@ -162,6 +154,11 @@ ul.nav__items li:last-child {
   align-items: center;
 }
 
+._authorized {
+  .autorisation-menu__title {
+    font-size: 12px;
+  }
+}
 .autorisation-menu__title {
   margin: 0 0 4px 0;
   text-align: center;
