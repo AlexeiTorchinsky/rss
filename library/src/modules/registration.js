@@ -7,14 +7,13 @@ import { openMyProfileModal } from './open-my-profile-modal';
 
 import {
   registerModal,
-  // profileIcon,
   registerButton,
   loginButton,
   profileIconContainer,
   autorizationMenu, 
-  closeBurger, 
+  // closeBurger, 
   openRegisterModal,
-  openAuthorizationMenu,
+  // openAuthorizationMenu,
   openLoginModal
 } from './autorization';
 
