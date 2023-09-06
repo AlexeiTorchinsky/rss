@@ -52,13 +52,18 @@
   text-transform: capitalize;
 }
 
+.my-profile-close-btn {
+  top: 23px;
+  right: 23px;
+}
 .profile-data {
   background-color: $color-white;
   width: 430px;
+  padding: 40px 0 39px 21px;
 }
 .my-profile-title {
+  margin: 0 0 40px 0;
   color: $color-black;
-  text-align: center;
   font-family: Forum;
   font-size: 40px;
   font-style: normal;
@@ -66,4 +71,90 @@
   line-height: 20px; /* 50% */
   letter-spacing: 0.8px;
   text-transform: uppercase;
+}
+
+.profile-data-columns {
+  display: flex;
+  width: 237px;
+  justify-content: space-between;
+  
+}
+
+.profile-data__data-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.data-column__title, 
+.profile-data__counter {
+  margin: 0;
+}
+
+.data-column__title {
+  color: $color-black;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  letter-spacing: 0.4px;
+}
+
+.profile-data__counter {
+  color: $color-black;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 200% */
+  letter-spacing: 0.2px;
+}
+
+.rented-books__title {
+  color: $color-dark;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 80% */
+  margin: 20px 0 30px 0;
+}
+
+
+.rented-books__books {
+  padding-left: 30px;
+}
+.rented-books__books-title {
+  color: $color-black;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.card-number {
+  display: flex;
+  color: $color-dark;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  padding-top: 24px;
+  span {
+    margin-right: 15px;
+  }
+  span, 
+  img {
+    display: inline-block;
+  }
+}
+.card-number__number {
+  color: $color-brown;
 }
