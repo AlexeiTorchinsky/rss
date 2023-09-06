@@ -7,7 +7,7 @@ import {
   removeClassName,
 } from "./burger";
 
-// export const profileIcon = document.querySelector(".header__profile-icon");
+
 export const profileIconContainer = document.querySelector('.header__profile-icon-container');
 export const registerButton = document.querySelector(".autorisation-menu__register");
 export const loginButton = document.querySelector(".autorisation-menu__login");
@@ -34,7 +34,7 @@ export const openAuthorizationMenu = () => {
     closeBurger();
   }
   autorizationMenu.classList.toggle("_opened");
-
+  
 }
 profileIconContainer.addEventListener("click", openAuthorizationMenu);
 
@@ -92,6 +92,7 @@ closeLogin.addEventListener("click", () => {
 });
 
 loginButton.addEventListener("click", openLoginModal);
+
 loginButton3.addEventListener("click", openLoginModal);
 
 registerButton2.addEventListener('click', () => {

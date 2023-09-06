@@ -7,6 +7,7 @@ import { changeBookCard, radioButtons } from './modules/favorites';
 import { profileIcon, autorizationMenu} from './modules/autorization';
 import { setUserData } from './modules/registration';
 import { buttonsBuy } from './modules/button-buy';
+import { MyProfileModal, openMyProfileModal} from './modules/open-my-profile-modal';
 
 
 

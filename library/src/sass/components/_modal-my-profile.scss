@@ -1,4 +1,8 @@
 .modal-my-profile {
+  display: none;
+}
+
+.modal-my-profile_opened {
   width: 600px;
   height: 400px;
   display: flex;
@@ -7,8 +11,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
+
 .profile-picture-and-name {
   width: 170px;
   background-color: $color-dark;
@@ -137,6 +141,7 @@
   text-transform: capitalize;
   margin-bottom: 10px;
 }
+
 
 .card-number {
   display: flex;

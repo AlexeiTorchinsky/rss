@@ -3,6 +3,8 @@ import {
   burgerIcon
  } from "./burger";
 
+import { openMyProfileModal } from './open-my-profile-modal';
+
 import {
   registerModal,
   // profileIcon,
@@ -12,7 +14,8 @@ import {
   autorizationMenu, 
   closeBurger, 
   openRegisterModal,
-  openAuthorizationMenu
+  openAuthorizationMenu,
+  openLoginModal
 } from './autorization';
 
 const signIn = document.querySelector('.register-button');
@@ -116,7 +119,7 @@ export const setUserData = () => {
 
     removeClassName();
 
-    // profileIcon.classList.add('_hidden');
+   
     profileIconContainer.classList.add('_logged');
     profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
     profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
@@ -124,6 +127,8 @@ export const setUserData = () => {
     autorizationMenuTitle.textContent = userData.cardNumb;
     registerButton.textContent = 'Log out';
     loginButton.textContent = 'My profile';
+    loginButton.removeEventListener('click', openLoginModal);
+    loginButton.addEventListener('click', openMyProfileModal);
 
 
     const logOut = () => {
@@ -135,19 +140,17 @@ export const setUserData = () => {
         registerButton.textContent = 'Register';
         loginButton.textContent = 'Log in';
         autorizationMenuTitle.textContent = 'Profile';
+        loginButton.removeEventListener('click', openMyProfileModal);
+        loginButton.addEventListener('click', openLoginModal);
     }
 
     registerButton.removeEventListener('click',  openRegisterModal);
-   
     registerButton.addEventListener('click', () => {
-
       if (autorizationMenu.classList.contains('_authorized')) {
         logOut();
         registerButton.addEventListener('click',  openRegisterModal);
       }
     })
-    
-    
     
 
   }
