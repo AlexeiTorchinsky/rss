@@ -9,12 +9,12 @@ import {
   body, 
   removeClassName } from "./burger";
 
+
 export const myProfileModal = document.querySelector('.modal-my-profile');
 const closeMyProfileModal = document.querySelector('.my-profile-close-btn');
-const cardNumber = document.querySelector('.card-number__number');
-const copyCardNumber = document.querySelector('.copy-card-number');
+export const cardNumber = document.querySelector('.card-number__number');
+export const copyCardNumber = document.querySelector('.copy-card-number');
 const copiedCardNumber = document.querySelector('.copied-card-number');
-
 
 export const openMyProfileModal = () => {
     autorizationMenu.classList.remove("_opened");
@@ -44,4 +44,5 @@ export const openMyProfileModal = () => {
     }, 100);
   })
 
+ 
   

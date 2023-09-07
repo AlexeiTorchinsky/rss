@@ -35,14 +35,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 100% */
-  text-transform: capitalize;
+  text-transform: uppercase;
   margin-top: 3px;
   margin-bottom: 15px;
 }
 
 .profile-name {
+  padding: 10px 15px;
   width: 120px;
-  height: 30px;
+  // height: 30px;
+  height: auto;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;

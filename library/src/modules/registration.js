@@ -11,11 +11,14 @@ import {
   loginButton,
   profileIconContainer,
   autorizationMenu, 
-  // closeBurger, 
   openRegisterModal,
-  // openAuthorizationMenu,
   openLoginModal
 } from './autorization';
+
+import { 
+  myProfileModal,
+  cardNumber
+} from './open-my-profile-modal';
 
 const signIn = document.querySelector('.register-button');
 const emailInput = document.querySelector('.register-input__email');
@@ -23,6 +26,8 @@ const passwordInput = document.querySelector('.register-input__password');
 const userName = document.querySelector('.register-input__user-name');
 const userLastName = document.querySelector('.register-input__user-last-name');
 const autorizationMenuTitle = document.querySelector('.autorisation-menu__title');
+const profileInitials = document.querySelector('.profile-picture');
+const profileName = document.querySelector('.profile-name');
 
 const removeMistake = () => {
 
@@ -128,7 +133,9 @@ export const setUserData = () => {
     loginButton.textContent = 'My profile';
     loginButton.removeEventListener('click', openLoginModal);
     loginButton.addEventListener('click', openMyProfileModal);
-
+    cardNumber.textContent = userData.cardNumb;
+    profileInitials.textContent = profileIconContainer.textContent;
+    profileName.textContent = `${userData.firstName} ${userData.lastName}`;
 
     const logOut = () => {
         autorizationMenu.classList.remove('_authorized');
@@ -149,14 +156,8 @@ export const setUserData = () => {
         logOut();
         registerButton.addEventListener('click',  openRegisterModal);
       }
-    })
-    
-
+    }) 
   }
-
-
-
-
 }
 
 signIn.addEventListener('click', setUserData);
