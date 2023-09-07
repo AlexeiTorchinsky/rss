@@ -11,6 +11,10 @@ import {
 
 export const myProfileModal = document.querySelector('.modal-my-profile');
 const closeMyProfileModal = document.querySelector('.my-profile-close-btn');
+const cardNumber = document.querySelector('.card-number__number');
+const copyCardNumber = document.querySelector('.copy-card-number');
+const copiedCardNumber = document.querySelector('.copied-card-number');
+
 
 export const openMyProfileModal = () => {
     autorizationMenu.classList.remove("_opened");
@@ -32,6 +36,12 @@ export const openMyProfileModal = () => {
   });
 
 
- 
+  copyCardNumber.addEventListener('click', () => {
+    window.navigator.clipboard.writeText(cardNumber.textContent);
+    copiedCardNumber.classList.add('_visible');
+    setTimeout(() => {
+      copiedCardNumber.classList.remove('_visible');
+    }, 100);
+  })
 
   

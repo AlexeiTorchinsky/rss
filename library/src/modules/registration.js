@@ -160,4 +160,9 @@ export const setUserData = () => {
 }
 
 signIn.addEventListener('click', setUserData);
+passwordInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+      setUserData();
+  }
+});
 
