@@ -13,7 +13,7 @@ export const removeClassName = () => {
   headerNavMenu.classList.remove('_active');
   headerNavList.classList.remove('_active');
   body.classList.remove('_locked');
-  bodyCover.classList.remove('_active', 'body__cover_modal-opened');
+  bodyCover.classList.remove('_active', '_modal-opened');
   autorizationMenu.classList.remove('_opened');
 }
 

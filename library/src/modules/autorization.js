@@ -7,6 +7,8 @@ import {
   removeClassName,
 } from "./burger";
 
+import { logOut } from './registration';
+
 
 export const profileIconContainer = document.querySelector('.header__profile-icon-container');
 export const registerButton = document.querySelector(".autorisation-menu__register");
@@ -50,10 +52,12 @@ window.addEventListener("click", (e) => {
 });
 
 export const openRegisterModal = () => {
-  autorizationMenu.classList.remove("_opened");
+  if (!autorizationMenu.classList.contains('_authorized')) {
+    autorizationMenu.classList.remove("_opened");
   bodyCover.classList.add("_active", "_modal-opened");
   registerModal.classList.add("modal-register_opened");
   body.classList.add("_locked");
+  console.log('openRegisterModal !')
   window.addEventListener("click", (e) => {
     const target = e.target;
     if (target.classList.contains("body__cover")) {
@@ -61,6 +65,16 @@ export const openRegisterModal = () => {
       registerModal.classList.remove("modal-register_opened");
     }
   });
+  }
+  
+
+  registerButton.addEventListener('click', () => {
+    if (autorizationMenu.classList.contains('_authorized')) {
+      logOut();
+      registerButton.addEventListener('click',  openRegisterModal);
+    }
+  }) 
+
 };
 
 export const openLoginModal = () => {

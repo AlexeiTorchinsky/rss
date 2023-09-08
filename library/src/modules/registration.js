@@ -3,7 +3,7 @@ import {
   burgerIcon
  } from "./burger";
 
-import { openMyProfileModal } from './open-my-profile-modal';
+// import { openMyProfileModal } from './open-my-profile-modal';
 
 import {
   registerModal,
@@ -17,9 +17,11 @@ import {
 } from './autorization';
 
 import { 
+  openMyProfileModal,
   myProfileModal,
   cardNumber
 } from './open-my-profile-modal';
+
 
 import { generateCardNumb } from "./generate0card-number";
 
@@ -34,8 +36,12 @@ const profileName = document.querySelector('.profile-name');
 const loginEmaiInput = document.getElementById('login-email-or-card');
 const loginPassword = document.getElementById('login-password');
 const logInButton = document.getElementById('login-button');
+const visitCounter = document.querySelector('.profile-data__counter');
+const checkCardButton = document.getElementById('check-thecard-button');
 
-let counter = 0;
+const userDataSaved = localStorage.getItem("userData");
+
+let counter = -1;
 
 const removeMistake = () => {
 
@@ -45,8 +51,22 @@ const removeMistake = () => {
   userLastName.classList.remove('mistake');
 }
 
+export const logOut = () => {
+        
+  autorizationMenu.classList.remove('_authorized');
+  profileIconContainer.classList.remove('_logged');
+  profileIconContainer.textContent = null;
+  profileIconContainer.removeAttribute('title')
+  autorizationMenu.classList.toggle('_opened');
+  registerButton.textContent = 'Register';
+  loginButton.textContent = 'Log in';
+  autorizationMenuTitle.textContent = 'Profile';
+  loginButton.removeEventListener('click', openMyProfileModal);
+  loginButton.addEventListener('click', openLoginModal);
+}
 
 export const setUserData = () => {
+
   const firstName = document.getElementById("register-name").value;
   const lastName = document.getElementById("register-last-name").value;
   const email = document.getElementById("register-email").value;
@@ -111,6 +131,7 @@ export const setUserData = () => {
     removeClassName();
 
     const getIn = () => {
+
       profileIconContainer.classList.add('_logged');
       profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
       profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
@@ -123,58 +144,48 @@ export const setUserData = () => {
       cardNumber.textContent = userData.cardNumb;
       profileInitials.textContent = profileIconContainer.textContent;
       profileName.textContent = `${userData.firstName} ${userData.lastName}`;
-      counter++;
+      counter += 1;
+      visitCounter.textContent = counter;
+      console.log(counter);
     }
+
     getIn();
 
 
-    const logOut = () => {
-        autorizationMenu.classList.remove('_authorized');
-        profileIconContainer.classList.remove('_logged');
-        profileIconContainer.textContent = null;
-        profileIconContainer.removeAttribute('title')
-        autorizationMenu.classList.toggle('_opened');
-        registerButton.textContent = 'Register';
-        loginButton.textContent = 'Log in';
-        autorizationMenuTitle.textContent = 'Profile';
-        loginButton.removeEventListener('click', openMyProfileModal);
-        loginButton.addEventListener('click', openLoginModal);
-        // registerButton.addEventListener('click',  openRegisterModal);
-    }
+   
 
-    registerButton.removeEventListener('click',  openRegisterModal);
+    // registerButton.removeEventListener('click',  openRegisterModal);
 
     registerButton.addEventListener('click', () => {
       if (autorizationMenu.classList.contains('_authorized')) {
         logOut();
-        // registerButton.addEventListener('click',  openRegisterModal);
+        registerButton.addEventListener('click',  openRegisterModal);
       }
     }) 
     
-   
+  
       
     // registerButton.addEventListener('click',  openRegisterModal);
-    const userDataSaved = localStorage.getItem("userData");
+    // const userDataSaved = localStorage.getItem("userData");
     console.log(userDataSaved)
-    
+
+  
     if (userDataSaved) {
       userData = JSON.parse(userDataSaved);
+      getIn(); 
       console.log(userData)
       logInButton.addEventListener('click', () => {
         if ((loginEmaiInput.value === userData.email || loginEmaiInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
           getIn();
           removeClassName();
           loginModal.classList.remove("modal-login_opened");
-        }
+        } 
       })
- 
-    }
-    // return userData;
-    }
-    console.log(counter)
-    
 
-    // registerButton.addEventListener('click',  openRegisterModal);
+    }
+    
+    }
+    
 }
 
 signInButton.addEventListener('click', setUserData);

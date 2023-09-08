@@ -24,6 +24,7 @@ arrowRight.addEventListener('click', moveRight);
 window.addEventListener('load',  () => {
   arrowRight.removeEventListener('click', moveRight);
   arrowRight.classList.add('_not-active');
+
 })
 
 
