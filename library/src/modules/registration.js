@@ -41,9 +41,9 @@ const checkCardButton = document.getElementById('check-thecard-button');
 
 
 
-// const userDataSaved = localStorage.getItem("userData");
+const userDataSaved = localStorage.getItem("userData");
 
-let counter = -1;
+let counter = 0;
 
 export const removeMistake = () => {
 
@@ -176,7 +176,8 @@ export const registered = () => {
   
       
     // registerButton.addEventListener('click',  openRegisterModal);
-    const userDataSaved = JSON.parse(localStorage.getItem("userData"));
+
+    // const userDataSaved = JSON.parse(localStorage.getItem("userData"));
     console.log(userDataSaved)
 
   
@@ -187,17 +188,17 @@ export const registered = () => {
       //getIn();
       // console.log(userData)
 
-      logInButton.addEventListener('click', () => {
-        if (userDataSaved) {
-          userData = userDataSaved;
-        }
+      // logInButton.addEventListener('click', () => {
+      //   if (userDataSaved) {
+      //     userData = userDataSaved;
+      //   }
 
-        if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
-          getIn();
-          removeClassName();
-          loginModal.classList.remove("modal-login_opened");
-        } 
-      })
+      //   if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
+      //     getIn();
+      //     removeClassName();
+      //     loginModal.classList.remove("modal-login_opened");
+      //   }
+      // })
 
     // }
     
@@ -213,3 +214,30 @@ passwordInput.addEventListener("keydown", function(event) {
   }
 });
 
+logInButton.addEventListener('click', () => {
+  let userData;
+  if (userDataSaved) {
+    userData =  userData = JSON.parse(userDataSaved);
+  }
+
+  if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
+      profileIconContainer.classList.add('_logged');
+      profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
+      profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
+      autorizationMenu.classList.add('_authorized');
+      autorizationMenuTitle.textContent = userData.cardNumb;
+      registerButton.textContent = 'Log out';
+      loginButton.textContent = 'My profile';
+      loginButton.removeEventListener('click', openLoginModal);
+      loginButton.addEventListener('click', openMyProfileModal);
+      cardNumber.textContent = userData.cardNumb;
+      profileInitials.textContent = profileIconContainer.textContent;
+      profileName.textContent = `${userData.firstName} ${userData.lastName}`;
+      counter += 1;
+      visitCounter.textContent = counter;
+      console.log(counter);
+
+    removeClassName();
+    loginModal.classList.remove("modal-login_opened");
+  }
+})
