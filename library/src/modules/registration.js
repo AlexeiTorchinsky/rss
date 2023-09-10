@@ -33,17 +33,19 @@ const userLastName = document.querySelector('.register-input__user-last-name');
 const autorizationMenuTitle = document.querySelector('.autorisation-menu__title');
 const profileInitials = document.querySelector('.profile-picture');
 const profileName = document.querySelector('.profile-name');
-const loginEmaiInput = document.getElementById('login-email-or-card');
+const loginEmailInput = document.getElementById('login-email-or-card');
 const loginPassword = document.getElementById('login-password');
 const logInButton = document.getElementById('login-button');
 const visitCounter = document.querySelector('.profile-data__counter');
 const checkCardButton = document.getElementById('check-thecard-button');
 
-const userDataSaved = localStorage.getItem("userData");
+
+
+// const userDataSaved = localStorage.getItem("userData");
 
 let counter = -1;
 
-const removeMistake = () => {
+export const removeMistake = () => {
 
   userName.classList.remove('mistake');
   emailInput.classList.remove('mistake');
@@ -65,7 +67,7 @@ export const logOut = () => {
   loginButton.addEventListener('click', openLoginModal);
 }
 
-export const setUserData = () => {
+export const registered = () => {
 
   const firstName = document.getElementById("register-name").value;
   const lastName = document.getElementById("register-last-name").value;
@@ -82,6 +84,8 @@ export const setUserData = () => {
     userName.placeholder = 'please enter name';
     return;
   }
+
+
 
   if (!lastName) {
     userLastName.classList.add('mistake');
@@ -115,7 +119,7 @@ export const setUserData = () => {
       cardNumb
     };
 
-    
+
 
     registerModal.classList.remove("modal-register_opened");
 
@@ -123,10 +127,16 @@ export const setUserData = () => {
 
 
 
-    document.getElementById("register-name").value = "";
-    document.getElementById("register-last-name").value = "";
-    document.getElementById("register-email").value = "";
-    document.getElementById("register-password").value = "";
+    // document.getElementById("register-name").value = "";
+    // document.getElementById("register-last-name").value = "";
+    // document.getElementById("register-email").value = "";
+    // document.getElementById("register-password").value = "";
+
+    userName.value = '';
+    userLastName.value = '';
+    emailInput.value = '';
+    passwordInput.value = '';
+
 
     removeClassName();
 
@@ -166,32 +176,40 @@ export const setUserData = () => {
   
       
     // registerButton.addEventListener('click',  openRegisterModal);
-    // const userDataSaved = localStorage.getItem("userData");
+    const userDataSaved = JSON.parse(localStorage.getItem("userData"));
     console.log(userDataSaved)
 
   
-    if (userDataSaved) {
-      userData = JSON.parse(userDataSaved);
-      getIn(); 
-      console.log(userData)
+    // if (userDataSaved) {
+    //   userData = JSON.parse(userDataSaved);
+      //
+
+      //getIn();
+      // console.log(userData)
+
       logInButton.addEventListener('click', () => {
-        if ((loginEmaiInput.value === userData.email || loginEmaiInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
+        if (userDataSaved) {
+          userData = userDataSaved;
+        }
+
+        if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
           getIn();
           removeClassName();
           loginModal.classList.remove("modal-login_opened");
         } 
       })
 
-    }
+    // }
     
-    }
-    
-}
 
-signInButton.addEventListener('click', setUserData);
+    }
+    
+  }
+
+signInButton.addEventListener('click', registered);
 passwordInput.addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
-      setUserData();
+     registered();
   }
 });
 
