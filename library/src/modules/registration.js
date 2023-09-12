@@ -3,8 +3,6 @@ import {
   burgerIcon
  } from "./burger";
 
-// import { openMyProfileModal } from './open-my-profile-modal';
-
 import {
   registerModal,
   registerButton,
@@ -25,6 +23,8 @@ import {
 
 import { generateCardNumb } from "./generate0card-number";
 
+import { changeCheckTheCardButton, changeCheckTheCardButtonBack, checkCardButtonListener } from "./change-chech-the-card-btn";
+
 const signInButton = document.querySelector('.register-button');
 const emailInput = document.querySelector('.register-input__email');
 const passwordInput = document.querySelector('.register-input__password');
@@ -37,13 +37,27 @@ const loginEmailInput = document.getElementById('login-email-or-card');
 const loginPassword = document.getElementById('login-password');
 const logInButton = document.getElementById('login-button');
 const visitCounter = document.querySelector('.profile-data__counter');
-const checkCardButton = document.getElementById('check-thecard-button');
+// let checkCardButton = document.querySelector('.check-the-card');
+const booksCounter = document.querySelector('.books-counter');
+// const profileDataColumns = document.querySelector('.profile-data-columns');
+// const digitalCardsInputs = document.querySelector('.digital-library-cards-input-forms_inputs');
+const digitCardButtonCheck = document.getElementById('check-thecard-button');
 
 
 
-const userDataSaved = localStorage.getItem("userData");
+
+
+
+
+export const userDataSaved = localStorage.getItem("userData");
 
 let counter = 0;
+let books = 0;
+
+let hasRegistered = false;
+let hasLogged = false;
+
+
 
 export const removeMistake = () => {
 
@@ -52,6 +66,29 @@ export const removeMistake = () => {
   passwordInput.classList.remove('mistake');
   userLastName.classList.remove('mistake');
 }
+
+// const changeCheckTheCardButton = () => {
+//   checkCardButton.classList.add('_logged-in');
+//   checkCardButton.innerHTML = profileDataColumns.innerHTML;
+//   digitalCardsInputs.style.marginBottom = '5px';
+// } 
+
+
+
+// const changeCheckTheCardButtonBack = () => {
+
+//   checkCardButton.classList.remove('_logged-in');
+//   checkCardButton.innerHTML = '<button class="button input-button" id="check-thecard-button">Check the card</button>';
+//   digitalCardsInputs.style.marginBottom = '20px';
+//   document.getElementById('check-thecard-button').addEventListener('click', checkCardButtonListener)
+
+// }
+
+// const checkCardButtonListener = () => {
+//   changeCheckTheCardButton();
+//   setTimeout(
+//   changeCheckTheCardButtonBack, 10000);
+// }
 
 export const logOut = () => {
         
@@ -65,6 +102,10 @@ export const logOut = () => {
   autorizationMenuTitle.textContent = 'Profile';
   loginButton.removeEventListener('click', openMyProfileModal);
   loginButton.addEventListener('click', openLoginModal);
+
+  changeCheckTheCardButtonBack(); 
+ 
+
 }
 
 export const registered = () => {
@@ -74,6 +115,7 @@ export const registered = () => {
   const email = document.getElementById("register-email").value;
   const password = document.getElementById("register-password").value;
   const cardNumb = generateCardNumb();
+  
 
 
 
@@ -116,7 +158,8 @@ export const registered = () => {
       lastName,
       email,
       password,
-      cardNumb
+      cardNumb,
+      books
     };
 
 
@@ -125,12 +168,6 @@ export const registered = () => {
 
     localStorage.setItem("userData", JSON.stringify(userData));
 
-
-
-    // document.getElementById("register-name").value = "";
-    // document.getElementById("register-last-name").value = "";
-    // document.getElementById("register-email").value = "";
-    // document.getElementById("register-password").value = "";
 
     userName.value = '';
     userLastName.value = '';
@@ -141,6 +178,7 @@ export const registered = () => {
     removeClassName();
 
     const getIn = () => {
+      
 
       profileIconContainer.classList.add('_logged');
       profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
@@ -155,16 +193,16 @@ export const registered = () => {
       profileInitials.textContent = profileIconContainer.textContent;
       profileName.textContent = `${userData.firstName} ${userData.lastName}`;
       counter += 1;
-      visitCounter.textContent = counter;
       console.log(counter);
+      visitCounter.textContent = counter;
+      booksCounter.textContent = books;
+      
+
     }
 
     getIn();
 
 
-   
-
-    // registerButton.removeEventListener('click',  openRegisterModal);
 
     registerButton.addEventListener('click', () => {
       if (autorizationMenu.classList.contains('_authorized')) {
@@ -175,35 +213,16 @@ export const registered = () => {
     
   
       
-    // registerButton.addEventListener('click',  openRegisterModal);
-
-    // const userDataSaved = JSON.parse(localStorage.getItem("userData"));
+ 
     console.log(userDataSaved)
 
   
-    // if (userDataSaved) {
-    //   userData = JSON.parse(userDataSaved);
-      //
 
-      //getIn();
-      // console.log(userData)
-
-      // logInButton.addEventListener('click', () => {
-      //   if (userDataSaved) {
-      //     userData = userDataSaved;
-      //   }
-
-      //   if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
-      //     getIn();
-      //     removeClassName();
-      //     loginModal.classList.remove("modal-login_opened");
-      //   }
-      // })
-
-    // }
-    
 
     }
+
+    hasRegistered = true;
+    console.log('hasRegistered: ', hasRegistered)
     
   }
 
@@ -214,13 +233,17 @@ passwordInput.addEventListener("keydown", function(event) {
   }
 });
 
+
 logInButton.addEventListener('click', () => {
   let userData;
   if (userDataSaved) {
     userData =  userData = JSON.parse(userDataSaved);
   }
 
+ 
+
   if ((loginEmailInput.value === userData.email || loginEmailInput.value === userData.cardNumb) && loginPassword.value === userData.password) {
+      
       profileIconContainer.classList.add('_logged');
       profileIconContainer.textContent = `${userData.firstName[0]}${userData.lastName[0]}`;
       profileIconContainer.setAttribute('title', `${userData.firstName} ${userData.lastName}`)
@@ -239,5 +262,20 @@ logInButton.addEventListener('click', () => {
 
     removeClassName();
     loginModal.classList.remove("modal-login_opened");
+    
+    changeCheckTheCardButton();
+
+
+    hasLogged = true;
+    console.log('hasLogged: ', hasLogged)
   }
 })
+
+
+
+digitCardButtonCheck.addEventListener('click', () => {
+  checkCardButtonListener();
+})
+
+
+

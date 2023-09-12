@@ -310,7 +310,7 @@
             <p class="digital-library-cards-input-forms__header">
               Find your Library card
             </p>
-            <form class="digital-library-cards-input-forms_forms-and-button">
+            <div class="digital-library-cards-input-forms_forms-and-button">
               <div class="digital-library-cards-input-forms_inputs">
                 <p class="digital-library-cards__inputs-header">
                   Brooklyn Public Library
@@ -318,8 +318,11 @@
                 <input class="digital-library-cards__input digital-library-cards__input_first" type="text" id="readers-name" placeholder="Reader's name ">
                 <input class="digital-library-cards__input" type="text" id="readers-card-number" placeholder="Card number">
               </div>
-              <button class="button input-button" id="check-thecard-button">Check the card</button>
-            </form>
+              <div class="check-the-card">
+                <button class="button input-button" id="check-thecard-button">Check the card</button>
+              </div>
+             
+            </div>
           </div>
           <div class="digital-library-cards__get-card">
             <p class="get-card__header">
@@ -441,13 +444,13 @@
           <div class="profile-data__data-column">
             <p class="data-column__title">Bonuses</p>
             <img src="./svg/profile-data-bonuses.svg" alt="">
-            <p class="profile-data__counter">1240</p>
+            <p class="profile-data__counter ">1240</p>
           </div>
         
         <div class="profile-data__data-column">
           <p class="data-column__title">Books</p>
           <img src="./svg/profile-data-book.svg" alt="">
-          <p class="profile-data__counter">0</p>
+          <p class="profile-data__counter books-counter">0</p>
         </div>
       </div>
       <div class="profile-data__rented-books">
