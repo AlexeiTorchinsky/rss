@@ -67,28 +67,6 @@ export const removeMistake = () => {
   userLastName.classList.remove('mistake');
 }
 
-// const changeCheckTheCardButton = () => {
-//   checkCardButton.classList.add('_logged-in');
-//   checkCardButton.innerHTML = profileDataColumns.innerHTML;
-//   digitalCardsInputs.style.marginBottom = '5px';
-// } 
-
-
-
-// const changeCheckTheCardButtonBack = () => {
-
-//   checkCardButton.classList.remove('_logged-in');
-//   checkCardButton.innerHTML = '<button class="button input-button" id="check-thecard-button">Check the card</button>';
-//   digitalCardsInputs.style.marginBottom = '20px';
-//   document.getElementById('check-thecard-button').addEventListener('click', checkCardButtonListener)
-
-// }
-
-// const checkCardButtonListener = () => {
-//   changeCheckTheCardButton();
-//   setTimeout(
-//   changeCheckTheCardButtonBack, 10000);
-// }
 
 export const logOut = () => {
         
@@ -159,7 +137,8 @@ export const registered = () => {
       email,
       password,
       cardNumb,
-      books
+      books,
+      counter
     };
 
 
@@ -193,9 +172,17 @@ export const registered = () => {
       profileInitials.textContent = profileIconContainer.textContent;
       profileName.textContent = `${userData.firstName} ${userData.lastName}`;
       counter += 1;
-      console.log(counter);
       visitCounter.textContent = counter;
-      booksCounter.textContent = books;
+
+      // userData.counter = counter;
+      // localStorage.setItem("userData", JSON.stringify(userData)); 
+      console.log(counter);
+
+      // visitCounter.textContent = counter;
+      // booksCounter.textContent = books;
+      // userData.counter = counter++;
+
+      // userData.books = books;
       
 
     }

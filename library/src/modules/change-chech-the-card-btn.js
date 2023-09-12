@@ -3,15 +3,8 @@
 let checkCardButton = document.querySelector('.check-the-card');
 const digitalCardsInputs = document.querySelector('.digital-library-cards-input-forms_inputs');
 const profileDataColumns = document.querySelector('.profile-data-columns');
-const digitCardsProfileName = document.getElementById('readers-name').value;
-const digitCardsCardNumb = document.getElementById('readers-card-number').value;
-
-
 
 const userDataSaved = JSON.parse(localStorage.getItem("userData"));
-console.log(userDataSaved)
-console.log( userDataSaved.firstName, userDataSaved.cardNumb)
-
 
 export const changeCheckTheCardButton = () => {
     checkCardButton.classList.add('_logged-in');
@@ -28,10 +21,9 @@ export const changeCheckTheCardButtonBack = () => {
 }
 
 export const checkCardButtonListener = () => {
-    
-    console.log('click!')
-    console.log( userDataSaved.firstName, userDataSaved.cardNumb)
-    console.log(digitCardsProfileName , digitCardsCardNumb)
+    const digitCardsProfileName = document.getElementById('readers-name').value;
+    const digitCardsCardNumb = document.getElementById('readers-card-number').value;
+
     if ((digitCardsProfileName && digitCardsCardNumb) && (digitCardsProfileName === userDataSaved.firstName && digitCardsCardNumb === userDataSaved.cardNumb))
     
     changeCheckTheCardButton();
