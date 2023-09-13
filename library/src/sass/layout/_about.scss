@@ -60,11 +60,19 @@
 }
 
 
-.arrows-btn_left {
+// .arrows-btn_left {
+//   background-image: url("../../src/svg/Carret_Left.svg");
+// }
+
+// .arrows-btn_right {
+//   background-image: url("../../src/svg/Carret_Right.svg");
+// }
+
+.arrows-btn_right {
   background-image: url("../../src/svg/Carret_Left.svg");
 }
 
-.arrows-btn_right {
+.arrows-btn_left {
   background-image: url("../../src/svg/Carret_Right.svg");
 }
 ._not-active {
