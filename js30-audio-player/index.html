@@ -7,25 +7,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="player">
-    <div class="player-controls">
-      <button class="play-prev player-icon"></button>
-      <button class="play player-icon"></button>
-      <button class="play-next player-icon"></button>
-      <button class="sound-off player-icon"></button>
+  <div class="wrapper">
+    <div class="player">
+      <img src="./assets/img/lemonade.png" class="player-picture
+      " alt="">
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+        <button class="sound-off player-icon"></button>
+        <input class="progressBar"
+            type="range"
+            id="progress-bar"
+            min="0"
+            max=""
+            value="0"
+        />
+        <div class="title">gggggg
+
+        </div>
+        <div class="current-time">00</div>
+        <div class="duration-time">00</div>
+      </div>
+      <!-- onchange="changeProgressBar()" -->
+
+
+      <ul class="play-list"></ul>
     </div>
-    <!-- onchange="changeProgressBar()" -->
-    <input class="progressBar"
-          type="range" 
-          id="progress-bar"
-          min="0" 
-          max="" 
-          value="0" 
-      />
-    <div class="title"></div>
-    <div class="currentTime"></div>
-    <div class="durationTime"></div>
-    <ul class="play-list"></ul>
   </div>
+
 </body>
 </html>
