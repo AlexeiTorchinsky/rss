@@ -202,33 +202,10 @@ body {
   color:  rgb(193, 255, 6);
 }
 
-/* .play-list {
-  text-align: left;
-} */
-
-/* .play-item {
-  position: relative;
-  padding: 5px;
-  padding-left: 20px;
-  list-style: none;
-  opacity: .8;
-  cursor: pointer;
-  transition: .3s;
-} */
-
-/* .play-item:hover {
-  opacity: 1;
+.player-picture-bg {
+  transition: all 0.2s ease-in-out;
 }
-
-.play-item::before {
-  content: "\2713";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-weight: 900;
+.scaled {
+  /* transition: 0.2s; */
+  transform: scale(1.2);
 }
-
-.item-active::before {
-  color: #C5B358;
-} */
-
