@@ -5,6 +5,8 @@ const trackSinger = document.querySelector('.singer');
 const progressBar = document.querySelector('#progress-bar');
 const playBtn = document.querySelector('.play');
 const playPicture = document.querySelector('.player-picture-bg');
+const soundOff = document.querySelector('.sound-off');
+
 
 const playList = [{
   singer: 'Beyonce',
@@ -28,8 +30,10 @@ let playNum = 0;
 const audio = new Audio();
 
 
+
 function toggleBtn() {
   playBtn.classList.toggle('pause');
+  playPicture.classList.toggle('scaled');
 }
 function playAudio() {
   audio.src = playList[playNum].src;
@@ -38,8 +42,6 @@ function playAudio() {
   trackTitle.textContent = playList[playNum].title;
   trackSinger.textContent = playList[playNum].singer;
   playPicture.style.backgroundImage = `url(${playList[playNum].background})`;
-  playPicture.style.transition = '0.2s'
-  playPicture.style.transform = 'scale(1.2)';
   audio.addEventListener('ended', playNext);
   body.style.backgroundImage = `url(${playList[playNum].background})`
 
@@ -47,7 +49,12 @@ function playAudio() {
   if(!isPlay) {
     audio.play();
     isPlay = true;
-    progressBar.max = audio.duration;
+
+    const durationSplited = playList[playNum].duration.split(':');
+    const durationInSeconds = Number( durationSplited[0]) * 60 + Number(durationSplited[1]);
+
+    progressBar.max = durationInSeconds;
+
     audio.currentTime = progressBar.value;
     progressBar.classList.add('progressBar-active');
     audio.addEventListener('timeupdate', () => {
@@ -99,7 +106,11 @@ function playAudioPrevNext() {
     audio.play();
     isPlay = true;
     playBtn.classList.add('pause');
-    progressBar.max = audio.duration;
+    // progressBar.max = audio.duration;
+    const durationSplited = playList[playNum].duration.split(':');
+const durationInSeconds = Number( durationSplited[0]) * 60 + Number(durationSplited[1]);
+    progressBar.max = durationInSeconds;
+
     audio.addEventListener('timeupdate', () => {
     document.querySelector('.current-time').innerHTML = (formatTime(audio.currentTime));
     progressBar.value = audio.currentTime;
@@ -130,7 +141,6 @@ function formatTime(seconds) {
   return `0${min}:${sec}`;
 };
 
-const soundOff = document.querySelector('.sound-off');
 
 function turnSoundOff() {
   soundOff.classList.toggle('active');
