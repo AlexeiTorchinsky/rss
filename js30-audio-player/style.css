@@ -209,3 +209,37 @@ body {
   /* transition: 0.2s; */
   transform: scale(1.2);
 }
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  gap: 30px;
+  align-items: center;
+
+}
+
+footer img,
+footer a {
+  display: block;
+}
+.github-link {
+  width: 50px;
+  height: 50px;
+
+}
+.rss-link {
+  width: 80px;
+  height: 80px;
+}
+.rss-link:hover,
+.github-link:hover {
+  transform: translateY(1px);
+}
+
+.footer-year {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
