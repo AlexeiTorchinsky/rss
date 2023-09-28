@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+		box-sizing: border-box;
+}
+body {
+    background-color: rgb(104, 103, 103);
+}
+
+.container {
+	max-width: 1240px;
+	padding: 20px 40px 20px 40px;
+	margin: 0 auto;
+}
+
+.header {
+  display: flex;
+	justify-content: space-between;
+	max-width: 1240px;
+	margin-bottom: 30px;
+}
+
+.header p {
+	color:blanchedalmond;
+	font-size: 1.5rem;
+	font-family: sans-serif;
+}
+
+.search-input-and-button {
+	display: flex;
+}
+.search-btn {
+	background: white;
+	height: 26px;
+	width: 50px;
+	border: none;
+	align-self: center;
+	color: rgb(56, 55, 55);
+}
+
+.search-btn:hover {
+	cursor: pointer;
+}
+
+.search-btn:active {
+  transform: scale(0.9);
+}
+
+
+#gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+ justify-content: center;
+ margin-bottom: 20px;
+}
+.gallery-img {
+    width: 380px; 
+		height: 250px;   
+}
+
+.footer {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+}
+
+footer img,
+footer a {
+  display: block;
+}
+.github-link {
+  width: 50px;
+  height: 50px;
+
+}
+.rss-link {
+  width: 80px;
+  height: 80px;
+}
+.rss-link:hover,
+.github-link:hover {
+  transform: translateY(1px);
+}
+
+.footer-year {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
