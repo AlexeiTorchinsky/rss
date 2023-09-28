@@ -26,6 +26,26 @@ body {
 	font-family: sans-serif;
 }
 
+.search-input-and-button {
+	display: flex;
+}
+.search-btn {
+	background: white;
+	height: 26px;
+	width: 50px;
+	border: none;
+	align-self: center;
+	color: rgb(56, 55, 55);
+}
+
+.search-btn:hover {
+	cursor: pointer;
+}
+
+.search-btn:active {
+  transform: scale(0.9);
+}
+
 
 #gallery-container {
   display: flex;
