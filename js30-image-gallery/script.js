@@ -25,15 +25,28 @@ async function getData() {
 	showData(data);
 }
 
-searchBtn.addEventListener('click', () => {
+const searchImage = () => {
 	const galleryContainer = document.getElementById('gallery-container');
   url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=ZIVZYc50_EDW342j99ztm9GD8eysuDudzTwr4Bgmi4c`;
 	galleryContainer.innerHTML = '';
 	getData();
-});
+}
+
+searchBtn.addEventListener('click', searchImage
+//  () => {
+// 	const galleryContainer = document.getElementById('gallery-container');
+//   url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=ZIVZYc50_EDW342j99ztm9GD8eysuDudzTwr4Bgmi4c`;
+// 	galleryContainer.innerHTML = '';
+// 	getData();
+// }
+);
 
 getData();
 
-
+document.addEventListener('keydown', event => {
+  if( event.code === 'Enter' ){
+		searchImage();
+	};
+});
 
 
