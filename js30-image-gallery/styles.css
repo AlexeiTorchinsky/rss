@@ -32,7 +32,9 @@ body {
 
 #search {
   outline:none;
+  font-size: 1rem;
 }
+
 .search-btn {
 	background: wheat;
 	height: 26px;
