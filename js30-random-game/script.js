@@ -3,7 +3,22 @@ const cactus = document.querySelector('.cactus');
 const buttonStart = document.querySelector('.start-button')
 const timerDisplay = document.querySelector('.timer');
 const gameOver = document.querySelector('.game-over');
+const goal = document.querySelector('.goal');
+const win = document.querySelector('.win');
+// const newGame = document.querySelector('.new-game-button');
 
+// newGame.addEventListener('click', () => {
+//   isGame = false;
+//   clearInterval(checkStatus);
+//   if (gameOver.classList.contains('_opened')) {
+//     gameOver.classList.remove('_opened');
+//   }
+//   if (goal.classList.contains('_hidden')) {
+//     goal.classList.remove('_hidden');
+//   }
+//   timerDisplay.style.opacity = '1';
+//   timerDisplay.textContent = '00:00:00'
+// })
 
 
 document.addEventListener('keydown', function(event) {
@@ -33,13 +48,17 @@ let minutes = 0;
 let savedTime = 0;
 
 const startGame = () => {
+  if (gameOver.classList.contains('_opened')) {
+    gameOver.classList.remove('_opened');
+  }
+  timerDisplay.style.opacity = '1';
   isGame = true;
+  dino.style.top = '130' + 'px';
   buttonStart.textContent = 'Finish';
   cactus.classList.add('cactus-moving');
   dino.classList.add('dino-running');
-  if (gameOver.classList.contains('_opnend')) {
-    gameOver.classList.remove('_opened');
-  } 
+  goal.classList.add('_hidden');
+
   
     const startTime = Date.now();
     timerInterval = setInterval(() => {
@@ -65,7 +84,7 @@ const finishGame = () => {
   cactus.classList.remove('cactus-moving');
   dino.classList.remove('dino-running');
   isGame = false;
-  
+
   clearInterval(timerInterval);
   
 
@@ -84,6 +103,7 @@ buttonStart.addEventListener('click', () => {
 
 
 let checkStatus = setInterval(function(){
+  let timerDisplayContent = timerDisplay.textContent;
   let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
   let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue('left'));
   if (cactusLeft < 45 && dinoTop >= 120) {
@@ -91,7 +111,15 @@ let checkStatus = setInterval(function(){
     finishGame();
     dino.style.top = `${dinoTop}px`;
     cactus.style.left = `${cactusLeft}px`;
+    timerDisplay.style.opacity = '0';
     gameOver.classList.add('_opened');
-    
+    gameOver.textContent = `Game over! Your time ${timerDisplayContent}`
   }
 })
+
+const youWin = () => {
+  if (timerDisplay.textContent === '00:05.100')
+  finishGame();
+  win.classList.add('__appeared');
+}
+youWin();
