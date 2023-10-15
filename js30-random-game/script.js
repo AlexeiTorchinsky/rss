@@ -5,20 +5,10 @@ const timerDisplay = document.querySelector('.timer');
 const gameOver = document.querySelector('.game-over');
 const goal = document.querySelector('.goal');
 const win = document.querySelector('.win');
-// const newGame = document.querySelector('.new-game-button');
+const jumpSound = new Audio('./assets/sounds/jump.mp3');
+const winSound = new Audio('./assets/sounds/win.mp3');
 
-// newGame.addEventListener('click', () => {
-//   isGame = false;
-//   clearInterval(checkStatus);
-//   if (gameOver.classList.contains('_opened')) {
-//     gameOver.classList.remove('_opened');
-//   }
-//   if (goal.classList.contains('_hidden')) {
-//     goal.classList.remove('_hidden');
-//   }
-//   timerDisplay.style.opacity = '1';
-//   timerDisplay.textContent = '00:00:00'
-// })
+
 
 
 document.addEventListener('keydown', function(event) {
@@ -32,6 +22,9 @@ function jump () {
 
   if (!dino.classList.contains(jump)){
   dino.classList.add('jump');
+  // jumpSound.currentTime = 0;
+  jumpSound.play();
+
   }
   setTimeout(function(){
     dino.classList.remove('jump');
@@ -48,6 +41,7 @@ let minutes = 0;
 let savedTime = 0;
 
 const startGame = () => {
+  win.classList.remove('_appeared');
   if (gameOver.classList.contains('_opened')) {
     gameOver.classList.remove('_opened');
   }
@@ -72,6 +66,7 @@ const startGame = () => {
         (seconds < 10 ? '0' : '') + seconds + '.' +
         (milliseconds < 100 ? '0' : '') + (milliseconds < 10 ? '0' : '') + milliseconds;
       timerDisplay.textContent = formattedTime;
+      youWin();
     }, 100);
     
 }
@@ -84,7 +79,6 @@ const finishGame = () => {
   cactus.classList.remove('cactus-moving');
   dino.classList.remove('dino-running');
   isGame = false;
-
   clearInterval(timerInterval);
   
 
@@ -117,9 +111,21 @@ let checkStatus = setInterval(function(){
   }
 })
 
-// const youWin = () => {
-//   if (timerDisplay.textContent === '00:05.100')
-//   finishGame();
-//   win.classList.add('__appeared');
-// }
-// youWin();
+function youWin() {
+
+  const desiredTime = 5100;
+  const [min, sec, millisec] = timerDisplay.textContent.split(/[:.]+/).map(Number);
+  const currentTimeMilliseconds = min * 60 * 1000 + sec * 1000 + millisec;
+
+  if (currentTimeMilliseconds >= desiredTime) {
+    winSound.play();
+    if (gameOver) {
+      gameOver.classList.remove('_opened');
+    }
+    gameOver.classList.remove('_opened');
+    finishGame();
+    win.classList.add('_appeared');
+
+  }
+
+}
