@@ -117,9 +117,9 @@ let checkStatus = setInterval(function(){
   }
 })
 
-const youWin = () => {
-  if (timerDisplay.textContent === '00:05.100')
-  finishGame();
-  win.classList.add('__appeared');
-}
-youWin();
+// const youWin = () => {
+//   if (timerDisplay.textContent === '00:05.100')
+//   finishGame();
+//   win.classList.add('__appeared');
+// }
+// youWin();
