@@ -108,8 +108,11 @@ let checkStatus = setInterval(function(){
     timerDisplay.style.opacity = '0';
     gameOver.classList.add('_opened');
     gameOver.textContent = `Game over! Your time ${timerDisplayContent}`
+    if (win.classList.contains('_appeared')) {
+      gameOver.classList.remove('_opened');
+    }
   }
-})
+}, 10);
 
 function youWin() {
 
@@ -118,11 +121,10 @@ function youWin() {
   const currentTimeMilliseconds = min * 60 * 1000 + sec * 1000 + millisec;
 
   if (currentTimeMilliseconds >= desiredTime) {
-    winSound.play();
-    if (gameOver) {
+    if (gameOver.classList.contains('_opened')) {
       gameOver.classList.remove('_opened');
     }
-    gameOver.classList.remove('_opened');
+    winSound.play();
     finishGame();
     win.classList.add('_appeared');
 
