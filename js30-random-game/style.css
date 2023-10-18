@@ -1,0 +1,146 @@
+.game-wrapper {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.game {
+  width: 600px;
+  height: 200px;
+  border-bottom: solid 1px black;
+  margin: auto;
+}
+
+.dino {
+  width: 70px;
+  height: 70px;
+  background-image: url('./assets/images/dino.png');
+  background-size: 70px 70px;
+  position: relative;
+  top: 130px;
+}
+
+
+
+.dino-running {
+  animation: dino-running 0.2s infinite linear;
+}
+
+@keyframes dino-running {
+  0% {
+    background-image: url('./assets/images/dino-run.png');
+  }
+  100% {
+    background-image: url('./assets/images/dino-run-2.png');
+  }
+}
+.cactus {
+  width: 40px;
+  height: 40px;
+  background-image: url('./assets/images/cactus.png');
+  background-size: 40px 40px;
+  position: relative;
+  top: 92px;
+  left: 560px;
+
+}
+
+.cactus-moving {
+  animation: cactus 1.5s infinite linear;
+}
+
+@keyframes cactus {
+  0% {
+    left: 560px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+.jump {
+  animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 130px;
+  }
+  30% {
+    top: 100px;
+  }
+  50% {
+    top: 50px;
+  }
+  80% {
+    top: 100px;
+  }
+  100% {
+    top: 130px;
+  }
+}
+
+.goal {
+  color: blue;
+  font-weight: bold;
+  position: absolute;
+  top: 40%;
+}
+.goal._hidden {
+  display: none;
+}
+.game-over {
+  display: none;
+}
+
+.game-over._opened {
+  display: block;
+  position: absolute;
+  top: 40%;
+  color: red;
+  font-weight: bold;
+}
+.win {
+  display: none;
+}
+
+.win._appeared {
+  display: block;
+  position: absolute;
+  color: green;
+  top: 40%;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+}
+
+footer img,
+footer a {
+  display: block;
+}
+.github-link {
+  width: 50px;
+  height: 50px;
+
+}
+.rss-link {
+  width: 80px;
+  height: 80px;
+}
+.rss-link:hover,
+.github-link:hover {
+  transform: translateY(1px);
+}
+
+.footer-year {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
